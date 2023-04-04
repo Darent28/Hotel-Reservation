@@ -1,0 +1,7 @@
+C:\Users\daren\source\repos\Sistema\Sistema\bin\Debug\Sistema.exe.config
+C:\Users\daren\source\repos\Sistema\Sistema\bin\Debug\Sistema.exe
+C:\Users\daren\source\repos\Sistema\Sistema\bin\Debug\Sistema.pdb
+C:\Users\daren\source\repos\Sistema\Sistema\obj\Debug\Sistema.Datis.csprojAssemblyReference.cache
+C:\Users\daren\source\repos\Sistema\Sistema\obj\Debug\Sistema.Datis.csproj.CoreCompileInputs.cache
+C:\Users\daren\source\repos\Sistema\Sistema\obj\Debug\Sistema.exe
+C:\Users\daren\source\repos\Sistema\Sistema\obj\Debug\Sistema.pdb
