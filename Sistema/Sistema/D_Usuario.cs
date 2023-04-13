@@ -27,9 +27,6 @@ namespace Sistema.Datos
                 Comando.Parameters.Add("@nomina", SqlDbType.Float).Value = Obj.nomina;
                 Comando.Parameters.Add("@fnacimiento", SqlDbType.Date).Value = Obj.fnacimiento;
                 Comando.Parameters.Add("@domicilio", SqlDbType.VarChar).Value = Obj.domicilio;
-                Comando.Parameters.Add("@ciudad", SqlDbType.VarChar).Value = Obj.ciudad;
-                Comando.Parameters.Add("@estado", SqlDbType.VarChar).Value = Obj.estado;
-                Comando.Parameters.Add("@pais", SqlDbType.VarChar).Value = Obj.pais;
                 Comando.Parameters.Add("@telefono", SqlDbType.Float).Value = Obj.telefono;
                 Comando.Parameters.Add("@esadmin", SqlDbType.Int).Value = Obj.esadmin;
                 Comando.Parameters.Add("@correo", SqlDbType.VarChar).Value = Obj.correo;
