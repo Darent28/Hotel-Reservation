@@ -80,7 +80,7 @@ namespace Sistema.Vistas
                 }
 
                 string respuesta = N_Usuario.sp_Usuario(RFC, nombre, apellidoP, apellidoM, double.Parse(nomina),
-                                                       fnacimiento, domicilio, ciudad, estado, pais,
+                                                       fnacimiento, domicilio,
                                                        double.Parse(telefono), tipo, correo, contrasena, "I");
 
                 if (respuesta.Equals("OK"))
@@ -133,11 +133,12 @@ namespace Sistema.Vistas
                 {
                     string user_contra = Convert.ToString(table.Rows[0][0]);//contraseña
                     string RFC = Convert.ToString(table.Rows[0][1]);
+                    string NomCompleto = Convert.ToString(table.Rows[0][2]);
 
                     if (user_contra.CompareTo(contra) == 0)
                     {
                         MessageBox.Show("Todo esta bien y ingresar seccion");
-                        Inicio frm = new Inicio(RFC);
+                        Forms_hotel.ADMIN_principal frm = new Forms_hotel.ADMIN_principal(RFC, NomCompleto);
                         frm.Show();
                         this.Hide();
                     }
@@ -150,6 +151,11 @@ namespace Sistema.Vistas
         }
 
         private void tb_correoL_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
         {
 
         }

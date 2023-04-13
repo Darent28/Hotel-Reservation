@@ -23,6 +23,7 @@ namespace Sistema.Vistas
 
         private void Inicio_Load(object sender, EventArgs e)
         {
+
             try
             {
                 dgv_Usuarios.DataSource = N_Usuario.sp_Get_Usuario();
