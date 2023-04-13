@@ -15,9 +15,6 @@ namespace Sistema.Entidad
         public double nomina { get; set; }
         public string fnacimiento { get; set; }
         public string domicilio { get; set; }
-        public string ciudad { get; set; }
-        public string estado { get; set; }
-        public string pais { get; set; }
         public double telefono { get; set; }
         public int esadmin { get; set; }
         public string correo { get; set; }
