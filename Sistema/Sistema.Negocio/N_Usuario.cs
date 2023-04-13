@@ -13,8 +13,7 @@ namespace Sistema.Negocio
     {
 
         public static string sp_Usuario(string RFC, string nombre, string apellidop, string apellidom,
-                                        double nomina, string fnacimiento, string domicilio, string ciudad,
-                                        string estado, string pais, double telefono, int esadmin,
+                                        double nomina, string fnacimiento, string domicilio, double telefono, int esadmin,
                                         string correo, string contrasena, string Op)
         {
             D_Usuario usuario = new D_Usuario();
@@ -26,9 +25,6 @@ namespace Sistema.Negocio
             Obj.nomina = nomina;
             Obj.fnacimiento = fnacimiento;
             Obj.domicilio = domicilio;
-            Obj.ciudad = ciudad;
-            Obj.estado = estado;
-            Obj.pais = pais;
             Obj.telefono = telefono;
             Obj.esadmin = esadmin;
             Obj.correo = correo;
