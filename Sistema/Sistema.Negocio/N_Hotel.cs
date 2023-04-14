@@ -37,7 +37,7 @@ namespace Sistema.Negocio
 
         public static string sp_Hotel_UD(int id_hotel, string nombreH, string ubicacion, string domicilioH,
                                        double numPiso, double canHabitacion, bool zonaTuris, bool servicioAdi, bool frentePlaya,
-                                       bool salonEventos, string fechaReg, string fechaInicioOp, string regAdim, string Op)
+                                       bool salonEventos, string Op)
         {
             D_Hotel hotel = new D_Hotel();
             Hotel Obj = new Hotel();
@@ -51,9 +51,6 @@ namespace Sistema.Negocio
             Obj.servicioAdi = servicioAdi;
             Obj.frentePlaya = frentePlaya;
             Obj.salonEventos = salonEventos;
-            Obj.fechaReg = fechaReg;
-            Obj.fechaInicioOp = fechaInicioOp;
-            Obj.regAdim = regAdim;
             Obj.Op = Op;
 
             return hotel.sp_Hotel(Obj);
