@@ -88,9 +88,9 @@ create proc sp_Hotel
 @servicioAdi				   Bit,
 @frentePlaya				   Bit,
 @salonEventos				   Bit,
-@fechaReg					   DATE, 
-@fechaInicioOp				   DATE,
-@regAdim					   varchar(13)
+@fechaReg					   DATE = NULL, 
+@fechaInicioOp				   DATE = NULL,
+@regAdim					   varchar(13) = NULL
 )
 as
 Begin
@@ -103,8 +103,8 @@ Begin
 	IF @Op = 'U' --update
 	Begin
 		Update Hotel set nombreH = @nombreH, ubicacion = @ubicacion, domicilioH = @domicilioH, numPiso = @numPiso,
-						   canHabitacion = @canHabitacion, zonaTuris = @zonaTuris,
-						   servicioAdi = @servicioAdi, frentePlaya = @frentePlaya, salonEventos = @salonEventos
+						 canHabitacion = @canHabitacion, zonaTuris = @zonaTuris, servicioAdi = @servicioAdi, 
+						 frentePlaya = @frentePlaya, salonEventos = @salonEventos
 		where id_hotel = @id_hotel	
 	End
 
@@ -123,5 +123,7 @@ go
 
 create proc sp_Get_Hotel
 as
-	select * from  Hotel;
+	select regAdim as 'Admin de Registro', id_hotel as ID, nombreH as 'Nombre del hotel', ubicacion as Ubicación,
+	domicilioH as Domicilio, numPiso as 'Numero de piso', canHabitacion as 'Cantidad de habitación', fechaInicioOp as 'Inicio de operaciones', fechaReg as Registro  
+	from  Hotel;
 go

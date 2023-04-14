@@ -39,10 +39,11 @@ create table Cliente(
 	fNacimiento DATE,
 	eCivil varchar(255) not null,
 	fRegistro DATE,
-	regAdim varchar(13) not null,
+	regAdim varchar(13),
 	foreign key (regAdim) REFERENCES Usuario(RFC)
 );
 
+drop table Cliente
 ------------------------------------------------------------------- Hotel-------------------------------------------------------------------------------------------------
 
 create table Hotel(
@@ -58,7 +59,7 @@ create table Hotel(
 	salonEventos Bit DEFAULT 0,
 	fechaReg DATE, 
 	fechaInicioOp DATE,
-	regAdim varchar(13) not null,
+	regAdim varchar(13),
 	foreign key (regAdim) REFERENCES Usuario(RFC)
 );
 
@@ -92,9 +93,6 @@ create table Reservacion(
 	fReser DATE,
 	fInicio DATE,
 	fFin DATE,
-	nombreC varchar(255) not null,	
-	nombreH varchar(255) not null,	
-	habitacion varchar(255) not null,	
 	canPers numeric(1,0) not null,
 	anticipo numeric(5,2) not null,
 	mPago varchar(255) not null,
@@ -108,7 +106,7 @@ create table Reservacion(
 ); 
 
 ALTER TABLE Reservacion
-DROP COLUMN descuento; 
+DROP COLUMN habitacion; 
 
 drop table Reservacion;
 ------------------------------------------------------------------- Check in-------------------------------------------------------------------------------------------------
