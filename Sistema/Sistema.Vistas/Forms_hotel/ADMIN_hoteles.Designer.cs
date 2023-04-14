@@ -32,6 +32,7 @@ namespace Sistema.Vistas.Forms_hotel
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ADMIN_hoteles));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labelRFC = new System.Windows.Forms.Label();
             this.fechas = new System.Windows.Forms.Label();
             this.horas = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -65,7 +66,8 @@ namespace Sistema.Vistas.Forms_hotel
             this.dateTimeFechaInicioOp = new System.Windows.Forms.DateTimePicker();
             this.label13 = new System.Windows.Forms.Label();
             this.dateTimePickerFechaIngreso = new System.Windows.Forms.DateTimePicker();
-            this.labelRFC = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textHotelID = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericPisos)).BeginInit();
@@ -89,6 +91,18 @@ namespace Sistema.Vistas.Forms_hotel
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(903, 117);
             this.panel1.TabIndex = 0;
+            // 
+            // labelRFC
+            // 
+            this.labelRFC.AutoSize = true;
+            this.labelRFC.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRFC.ForeColor = System.Drawing.Color.White;
+            this.labelRFC.Location = new System.Drawing.Point(635, 21);
+            this.labelRFC.Name = "labelRFC";
+            this.labelRFC.Size = new System.Drawing.Size(67, 19);
+            this.labelRFC.TabIndex = 89;
+            this.labelRFC.Text = "labelRFC";
+            this.labelRFC.Visible = false;
             // 
             // fechas
             // 
@@ -356,6 +370,7 @@ namespace Sistema.Vistas.Forms_hotel
             this.btnEditar.TabIndex = 26;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnElim
             // 
@@ -399,23 +414,29 @@ namespace Sistema.Vistas.Forms_hotel
             // 
             // dateTimePickerFechaIngreso
             // 
+            this.dateTimePickerFechaIngreso.Enabled = false;
             this.dateTimePickerFechaIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePickerFechaIngreso.Location = new System.Drawing.Point(448, 449);
             this.dateTimePickerFechaIngreso.Name = "dateTimePickerFechaIngreso";
             this.dateTimePickerFechaIngreso.Size = new System.Drawing.Size(137, 26);
             this.dateTimePickerFechaIngreso.TabIndex = 88;
             // 
-            // labelRFC
+            // label6
             // 
-            this.labelRFC.AutoSize = true;
-            this.labelRFC.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRFC.ForeColor = System.Drawing.Color.White;
-            this.labelRFC.Location = new System.Drawing.Point(635, 21);
-            this.labelRFC.Name = "labelRFC";
-            this.labelRFC.Size = new System.Drawing.Size(67, 19);
-            this.labelRFC.TabIndex = 89;
-            this.labelRFC.Text = "labelRFC";
-            this.labelRFC.Visible = false;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(289, 455);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(121, 19);
+            this.label6.TabIndex = 87;
+            this.label6.Text = "Fecha de registro :";
+            // 
+            // textHotelID
+            // 
+            this.textHotelID.Location = new System.Drawing.Point(448, 167);
+            this.textHotelID.Name = "textHotelID";
+            this.textHotelID.Size = new System.Drawing.Size(45, 26);
+            this.textHotelID.TabIndex = 89;
+            this.textHotelID.Visible = false;
             // 
             // ADMIN_hoteles
             // 
@@ -423,8 +444,10 @@ namespace Sistema.Vistas.Forms_hotel
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gold;
             this.ClientSize = new System.Drawing.Size(900, 782);
+            this.Controls.Add(this.textHotelID);
             this.Controls.Add(this.dateTimePickerFechaIngreso);
             this.Controls.Add(this.dateTimeFechaInicioOp);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.btnVerHoteles);
             this.Controls.Add(this.btnElim);
@@ -506,5 +529,7 @@ namespace Sistema.Vistas.Forms_hotel
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DateTimePicker dateTimePickerFechaIngreso;
         private System.Windows.Forms.Label labelRFC;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textHotelID;
     }
 }

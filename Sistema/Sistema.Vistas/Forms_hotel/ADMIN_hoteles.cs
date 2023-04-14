@@ -1,5 +1,6 @@
 ﻿using Sistema.Negocio;
 using System;
+using System.Reflection;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -36,6 +37,20 @@ namespace Sistema.Vistas.Forms_hotel
              label4.Text = nombre;
              labelRFC.Text = rfc;
 
+            textHotelID.Clear();
+            textNombre_hotel.Clear();
+            textUbicacion.Clear();
+            textDomicilio.Clear();
+            numericPisos.ResetText();
+            numericHabitaciones.ResetText();
+            dateTimeFechaInicioOp.ResetText();
+            checkZonaT.Checked = false;
+            checkServicios.Checked = false;
+            checkPlaya.Checked = false;
+            checkEventos.Checked = false;
+
+            SetDoubleBuffered(dataGridHoteles);
+
             if (mostrarHot == true)
             {
                 try
@@ -48,6 +63,14 @@ namespace Sistema.Vistas.Forms_hotel
                 }
             }
         }
+
+        public static void SetDoubleBuffered(Control control)
+        {
+            typeof(Control).InvokeMember("DoubleBuffered",
+                BindingFlags.SetProperty | BindingFlags.Instance | BindingFlags.NonPublic,
+                null, control, new object[] { true });
+        }
+
 
         private void label7_Click(object sender, EventArgs e)
         {
@@ -108,13 +131,13 @@ namespace Sistema.Vistas.Forms_hotel
             }
             else
             {
-                textNombre_hotel.Text = dataGridHoteles.CurrentRow.Cells[1].Value.ToString();
-                textUbicacion.Text = dataGridHoteles.CurrentRow.Cells[2].Value.ToString();
-                textDomicilio.Text = dataGridHoteles.CurrentRow.Cells[3].Value.ToString();
-                numericPisos.Text = dataGridHoteles.CurrentRow.Cells[4].Value.ToString();
-                numericHabitaciones.Text = dataGridHoteles.CurrentRow.Cells[5].Value.ToString();
-                dateTimeFechaInicioOp.Text = dataGridHoteles.CurrentRow.Cells[10].Value.ToString();
-                dateTimePickerFechaIngreso.Text = dataGridHoteles.CurrentRow.Cells[11].Value.ToString();
+                textHotelID.Text = dataGridHoteles.CurrentRow.Cells[1].Value.ToString();
+                textNombre_hotel.Text = dataGridHoteles.CurrentRow.Cells[2].Value.ToString();
+                textUbicacion.Text = dataGridHoteles.CurrentRow.Cells[3].Value.ToString();
+                textDomicilio.Text = dataGridHoteles.CurrentRow.Cells[4].Value.ToString();
+                numericPisos.Text = dataGridHoteles.CurrentRow.Cells[5].Value.ToString();
+                numericHabitaciones.Text = dataGridHoteles.CurrentRow.Cells[6].Value.ToString();
+                dateTimeFechaInicioOp.Text = dataGridHoteles.CurrentRow.Cells[7].Value.ToString();
                 //checkZonaT.Checked = dataGridHoteles.CurrentRow.Cells[8].Value.ToString();
                 //checkServicios.Checked = dataGridHoteles.CurrentRow.Cells[9].Value.ToString();
                 //checkPlaya.Checked = dataGridHoteles.CurrentRow.Cells[10].Value.ToString();
@@ -137,6 +160,44 @@ namespace Sistema.Vistas.Forms_hotel
             }
 
             ADMIN_hoteles_Load(sender, e);
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            string ID = textHotelID.Text;
+            string nombreHotel = textNombre_hotel.Text;
+            string ubicacion = textUbicacion.Text;
+            string domicilio = textDomicilio.Text;
+            string numPiso = numericPisos.Text;
+            string canHab = numericHabitaciones.Text;
+            bool zonaTuri = checkZonaT.Checked;
+            bool servicioAdd = checkServicios.Checked;
+            bool frentePlaya = checkPlaya.Checked;
+            bool solonEventos = checkEventos.Checked;
+
+            if (nombreHotel.CompareTo("") == 0 || ubicacion.CompareTo("") == 0 || domicilio.CompareTo("") == 0 || numPiso.CompareTo("") == 0 ||
+                canHab.CompareTo("") == 0)
+            {
+                MessageBox.Show("Favor de llenar todos los campos.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+
+                string respuesta = N_Hotel.sp_Hotel_UD(Int32.Parse(ID), ubicacion, ubicacion, domicilio, double.Parse(numPiso), double.Parse(canHab),
+                                                    zonaTuri, servicioAdd, frentePlaya, solonEventos, "U");
+
+                if (respuesta.Equals("OK"))
+                {
+                    MessageBox.Show("Hotel Editado", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ADMIN_hoteles_Load(sender, e);
+                }
+                else
+                {
+                    MessageBox.Show(respuesta, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ADMIN_hoteles_Load(sender, e);
+                }
+
+            }
         }
     }
 }
