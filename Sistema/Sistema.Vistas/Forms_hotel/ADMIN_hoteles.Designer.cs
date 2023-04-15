@@ -382,6 +382,7 @@ namespace Sistema.Vistas.Forms_hotel
             this.btnElim.TabIndex = 27;
             this.btnElim.Text = "Eliminar";
             this.btnElim.UseVisualStyleBackColor = false;
+            this.btnElim.Click += new System.EventHandler(this.btnElim_Click);
             // 
             // btnVerHoteles
             // 

@@ -257,7 +257,7 @@ namespace Sistema.Vistas.Forms_hotel
             else
             {
                 DialogResult Opcion;
-                Opcion = MessageBox.Show("Deseas eliminar al Usuario con el RFC:" + "[" + RFC.ToString() + "]" + "?", "Atencion", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                Opcion = MessageBox.Show("Deseas eliminar al Usuario con el RFC: " + "[" + RFC.ToString() + "]" + "?", "Atencion", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
                 if (Opcion == DialogResult.OK)
                 {

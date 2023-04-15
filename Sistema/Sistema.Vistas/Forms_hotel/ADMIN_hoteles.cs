@@ -105,7 +105,7 @@ namespace Sistema.Vistas.Forms_hotel
             else
             {
 
-                string respuesta = N_Hotel.sp_Hotel(ubicacion, ubicacion, domicilio, double.Parse(numPiso), double.Parse(canHab),
+                string respuesta = N_Hotel.sp_Hotel(nombreHotel, ubicacion, domicilio, double.Parse(numPiso), double.Parse(canHab),
                                                     zonaTuri, servicioAdd, frentePlaya, solonEventos, fInicioOp, fIngreso, regAdmin, "I");
 
                 if (respuesta.Equals("OK"))
@@ -183,7 +183,7 @@ namespace Sistema.Vistas.Forms_hotel
             else
             {
 
-                string respuesta = N_Hotel.sp_Hotel_UD(Int32.Parse(ID), ubicacion, ubicacion, domicilio, double.Parse(numPiso), double.Parse(canHab),
+                string respuesta = N_Hotel.sp_Hotel_UD(Int32.Parse(ID), nombreHotel, ubicacion, domicilio, double.Parse(numPiso), double.Parse(canHab),
                                                     zonaTuri, servicioAdd, frentePlaya, solonEventos, "U");
 
                 if (respuesta.Equals("OK"))
@@ -195,6 +195,50 @@ namespace Sistema.Vistas.Forms_hotel
                 {
                     MessageBox.Show(respuesta, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     ADMIN_hoteles_Load(sender, e);
+                }
+
+            }
+        }
+
+        private void btnElim_Click(object sender, EventArgs e)
+        {
+            string ID = textHotelID.Text;
+            string nombreHotel = textNombre_hotel.Text;
+            string ubicacion = textUbicacion.Text;
+            string domicilio = textDomicilio.Text;
+            string numPiso = numericPisos.Text;
+            string canHab = numericHabitaciones.Text;
+            bool zonaTuri = checkZonaT.Checked;
+            bool servicioAdd = checkServicios.Checked;
+            bool frentePlaya = checkPlaya.Checked;
+            bool solonEventos = checkEventos.Checked;
+
+            if (nombreHotel.CompareTo("") == 0 || ubicacion.CompareTo("") == 0 || domicilio.CompareTo("") == 0 || numPiso.CompareTo("") == 0 ||
+                canHab.CompareTo("") == 0)
+            {
+                MessageBox.Show("Favor de llenar todos los campos.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                DialogResult Opcion;
+                Opcion = MessageBox.Show("Deseas eliminar el Hotel:" + " " + nombreHotel.ToString() + "?", "Atencion", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+                if (Opcion == DialogResult.OK)
+                {
+                    string respuesta = N_Hotel.sp_Hotel_UD(Int32.Parse(ID), nombreHotel, ubicacion, domicilio, double.Parse(numPiso), double.Parse(canHab),
+                                                    zonaTuri, servicioAdd, frentePlaya, solonEventos, "D");
+
+                    if (respuesta.Equals("OK"))
+                    {
+                        MessageBox.Show("Hotel Editado", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ADMIN_hoteles_Load(sender, e);
+                    }
+                    else
+                    {
+                        MessageBox.Show(respuesta, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        ADMIN_hoteles_Load(sender, e);
+                    }
+
                 }
 
             }
