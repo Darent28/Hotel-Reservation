@@ -127,3 +127,111 @@ as
 	domicilioH as Domicilio, numPiso as 'Numero de piso', canHabitacion as 'Cantidad de habitación', fechaInicioOp as 'Inicio de operaciones', fechaReg as Registro  
 	from  Hotel;
 go
+
+--------------------------------------------------------------------------Habitación--------------------------------------------------------------------------------------------------------------------
+
+If OBJECT_ID ('sp_Habitacion') is not null
+	Drop procedure sp_Habitacion;
+go
+
+create proc sp_Habitacion
+(
+@Op							   CHAR(1),
+@id_habitacion				   int,
+@numCamas					   numeric(1,0),
+@tipoCama					   varchar(255),
+@preXpersXnoc				   float,
+@canXpersXhab				   numeric(1,0),
+@nivelHab					   varchar(255),
+@frente						   int,
+@regAdim					   varchar(13)
+)
+as
+Begin
+	IF @Op = 'I' --insert
+	Begin
+		insert into Habitacion (numCamas, tipoCama, preXpersXnoc, canXpersXhab, nivelHab, frente, regAdim)
+				       	Values (@numCamas, @tipoCama, @preXpersXnoc, @canXpersXhab, @nivelHab, @frente, @regAdim)
+	End
+
+	IF @Op = 'U' --update
+	Begin
+		Update Habitacion set numCamas = @numCamas, tipoCama = @tipoCama, preXpersXnoc = @preXpersXnoc, canXpersXhab = @canXpersXhab,
+						 nivelHab = @nivelHab, frente = @frente
+		where id_habitacion = @id_habitacion	
+	End
+
+	IF @Op = 'D' --delete
+	Begin
+		delete from Habitacion  where id_habitacion = @id_habitacion	
+	End
+
+End;
+go
+
+If OBJECT_ID ('sp_Get_Habitacion') is not null
+	Drop procedure sp_Get_Habitacion;
+go
+
+create proc sp_Get_Habitacion
+as
+	select regAdim as 'Admin que lo registra', id_habitacion as ID, numCamas as 'Numero de camas',
+		   tipoCama as 'Tipo de cama', Format(preXpersXnoc, 'N2') as 'Precio por persona', canXpersXhab as 'Cantidad de personas', 
+		   nivelHab as 'Nivel de Habitacion', frente as Frente
+	from  Habitacion;
+go
+
+--------------------------------------------------------------------------Cliente--------------------------------------------------------------------------------------------------------------------
+
+If OBJECT_ID ('sp_Cliente') is not null
+	Drop procedure sp_Cliente;
+go
+
+create proc sp_Cliente
+(
+@Op							   CHAR(1),
+@RFC						   varchar(250),
+@nombre			               varchar(250),
+@apellidoP					   varchar(250),
+@apellidoM                     varchar(250),
+@domicilio					   varchar(255),
+@correo						   varchar(255),
+@telefono					   numeric(10,0),
+@referencia					   varchar(255),
+@fNacimiento				   DATE,
+@eCivil						   varchar(255),
+@fRegistro					   DATE,
+@regAdim					   varchar(13)
+)
+as
+Begin
+	IF @Op = 'I' --insert
+	Begin
+		insert into Cliente (RFC, nombre, apellidoP, apellidoM, domicilio, correo, telefono, referencia, fNacimiento, eCivil, fRegistro, regAdim)
+				    Values (@RFC, @nombre, @apellidoP, @apellidoM, @domicilio, @correo, @telefono, @referencia, @fNacimiento, @eCivil, @fRegistro, @regAdim)
+	End
+
+	IF @Op = 'U' --update
+	Begin
+		Update Cliente set nombre = @nombre, apellidoP = @apellidoP, apellidoM = @apellidoM,
+						 domicilio = @domicilio, correo = @correo, telefono = @telefono, referencia = @referencia, 
+						 fNacimiento = @fNacimiento, eCivil = @eCivil, fRegistro = @fRegistro
+		where RFC = @RFC	
+	End
+
+	IF @Op = 'D' --delete
+	Begin
+		delete from Cliente  where RFC = @RFC	
+	End
+
+End;
+go
+
+If OBJECT_ID ('sp_Get_Cliente') is not null
+	Drop procedure sp_Get_Cliente;
+go
+
+create proc sp_Get_Cliente
+as
+	select * from Cliente;
+go

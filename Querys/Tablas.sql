@@ -73,7 +73,7 @@ create table Habitacion(
 	id_habitacion int primary key identity,
 	numCamas numeric(1,0) not null,
 	tipoCama varchar(255) not null,	
-	preXpersXnoc numeric(5,2) not null, --precio de persona por noche
+	preXpersXnoc float not null, --precio de persona por noche
 	canXpersXhab numeric(1,0) not null, --cantidad de persona por habitacion
 	nivelHab varchar(255) not null,	
 	frente int not null,
@@ -89,7 +89,6 @@ drop table Habitacion;
 
 create table HabitacionHotel(
 	id_HH int primary key identity,
-
 	id_habitacion int not null,
 	id_hotel int not null,
 	tipoHab varchar(255) not null,	
@@ -108,7 +107,7 @@ create table Reservacion(
 	fInicio DATE,
 	fFin DATE,
 	canPers numeric(1,0) not null,
-	anticipo numeric(5,2) not null,
+	anticipo float not null,
 	mPago varchar(255) not null,
 	regAdim varchar(13) not null,
 	rfcCliente varchar(13) not null,
@@ -151,9 +150,9 @@ create table Factura(
 	numFactura numeric(5,0) primary key,
 	cod_reser varchar(9) not null,
 	servUsado varchar(255) not null, 
-	precio numeric(5,2) not null,
-	descuento numeric(5,2) not null,
-	montoTotal numeric(5,2) not null,
+	precio float not null,
+	descuento float not null,
+	montoTotal float not null,
 	id_checkout int,
 	foreign key (cod_reser) REFERENCES Reservacion(codigo),
 	foreign key (id_checkout) REFERENCES Checkout(id_checkout)
