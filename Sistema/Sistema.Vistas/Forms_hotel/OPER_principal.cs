@@ -30,7 +30,7 @@ namespace Sistema.Vistas.Forms_hotel
 
         private void registrarClienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OPER_clientes paginaClientes = new OPER_clientes();
+            OPER_clientes paginaClientes = new OPER_clientes(rfc, nombre);
             paginaClientes.Show();
         }
 

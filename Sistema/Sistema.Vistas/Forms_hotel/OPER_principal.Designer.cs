@@ -42,6 +42,7 @@ namespace Sistema.Vistas.Forms_hotel
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.registrarClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarReservaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cerrarSeciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timerOP = new System.Windows.Forms.Timer(this.components);
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -67,7 +68,6 @@ namespace Sistema.Vistas.Forms_hotel
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.cerrarSeciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -197,6 +197,13 @@ namespace Sistema.Vistas.Forms_hotel
             this.registrarReservaciónToolStripMenuItem.Size = new System.Drawing.Size(128, 20);
             this.registrarReservaciónToolStripMenuItem.Text = "Registrar reservación";
             this.registrarReservaciónToolStripMenuItem.Click += new System.EventHandler(this.registrarReservaciónToolStripMenuItem_Click);
+            // 
+            // cerrarSeciónToolStripMenuItem
+            // 
+            this.cerrarSeciónToolStripMenuItem.Name = "cerrarSeciónToolStripMenuItem";
+            this.cerrarSeciónToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
+            this.cerrarSeciónToolStripMenuItem.Text = "Cerrar sesión";
+            this.cerrarSeciónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSeciónToolStripMenuItem_Click);
             // 
             // timerOP
             // 
@@ -443,13 +450,6 @@ namespace Sistema.Vistas.Forms_hotel
             this.label7.TabIndex = 0;
             this.label7.Text = "Coloque el código de reservación y pregunté al cliente los campos que \r\naparecen " +
     "aquí abajo.\r\n";
-            // 
-            // cerrarSeciónToolStripMenuItem
-            // 
-            this.cerrarSeciónToolStripMenuItem.Name = "cerrarSeciónToolStripMenuItem";
-            this.cerrarSeciónToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
-            this.cerrarSeciónToolStripMenuItem.Text = "Cerrar sesión";
-            this.cerrarSeciónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSeciónToolStripMenuItem_Click);
             // 
             // OPER_principal
             // 

@@ -138,10 +138,6 @@ namespace Sistema.Vistas.Forms_hotel
                 numericPisos.Text = dataGridHoteles.CurrentRow.Cells[5].Value.ToString();
                 numericHabitaciones.Text = dataGridHoteles.CurrentRow.Cells[6].Value.ToString();
                 dateTimeFechaInicioOp.Text = dataGridHoteles.CurrentRow.Cells[7].Value.ToString();
-                //checkZonaT.Checked = dataGridHoteles.CurrentRow.Cells[8].Value.ToString();
-                //checkServicios.Checked = dataGridHoteles.CurrentRow.Cells[9].Value.ToString();
-                //checkPlaya.Checked = dataGridHoteles.CurrentRow.Cells[10].Value.ToString();
-                //checkEventos.Checked = dataGridHoteles.CurrentRow.Cells[10].Value.ToString();
 
             }
         }
@@ -183,7 +179,7 @@ namespace Sistema.Vistas.Forms_hotel
             else
             {
 
-                string respuesta = N_Hotel.sp_Hotel_UD(Int32.Parse(ID), nombreHotel, ubicacion, domicilio, double.Parse(numPiso), double.Parse(canHab),
+                string respuesta = N_Hotel.sp_Hotel_UD(int.Parse(ID), nombreHotel, ubicacion, domicilio, double.Parse(numPiso), double.Parse(canHab),
                                                     zonaTuri, servicioAdd, frentePlaya, solonEventos, "U");
 
                 if (respuesta.Equals("OK"))
@@ -225,7 +221,7 @@ namespace Sistema.Vistas.Forms_hotel
 
                 if (Opcion == DialogResult.OK)
                 {
-                    string respuesta = N_Hotel.sp_Hotel_UD(Int32.Parse(ID), nombreHotel, ubicacion, domicilio, double.Parse(numPiso), double.Parse(canHab),
+                    string respuesta = N_Hotel.sp_Hotel_UD(int.Parse(ID), nombreHotel, ubicacion, domicilio, double.Parse(numPiso), double.Parse(canHab),
                                                     zonaTuri, servicioAdd, frentePlaya, solonEventos, "D");
 
                     if (respuesta.Equals("OK"))

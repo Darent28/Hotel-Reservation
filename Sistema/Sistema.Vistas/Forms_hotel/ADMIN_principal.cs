@@ -37,7 +37,7 @@ namespace Sistema.Vistas.Forms_hotel
 
         private void habitacionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ADMIN_habitacion paginaRegisHabitacion = new ADMIN_habitacion();
+            ADMIN_habitacion paginaRegisHabitacion = new ADMIN_habitacion(rfc, nombre);
             paginaRegisHabitacion.Show();
         }
 
