@@ -45,9 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="N_Checkin.cs" />
     <Compile Include="N_Cliente.cs" />
     <Compile Include="N_Habitacion.cs" />
+    <Compile Include="N_HabitacionHotel.cs" />
     <Compile Include="N_Hotel.cs" />
+    <Compile Include="N_Reservacion.cs" />
     <Compile Include="N_Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
