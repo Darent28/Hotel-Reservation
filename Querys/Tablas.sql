@@ -85,7 +85,7 @@ ALTER TABLE Habitacion
 DROP COLUMN precio; 
 drop table Habitacion;
 
-------------------------------------------------------------------- Habitación-------------------------------------------------------------------------------------------------
+------------------------------------------------------------------- HabitacionHotel -------------------------------------------------------------------------------------------------
 
 create table HabitacionHotel(
 	id_HH int primary key identity,
@@ -127,8 +127,8 @@ drop table Reservacion;
 create table Checkin(
 	id_checkin int primary key identity,
 	asistio int DEFAULT 0,
-	RFC_Cliente varchar(13),
-	foreign key (RFC_Cliente) REFERENCES Cliente(RFC)
+	codigo varchar(9),
+	foreign key (codigo) REFERENCES Reservacion(codigo)
 
 );
 
