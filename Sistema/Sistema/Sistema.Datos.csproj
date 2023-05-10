@@ -46,9 +46,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connection.cs" />
+    <Compile Include="D_Checkin.cs" />
+    <Compile Include="D_Checkout.cs" />
     <Compile Include="D_Cliente.cs" />
     <Compile Include="D_Habitacion.cs" />
+    <Compile Include="D_HH.cs" />
     <Compile Include="D_Hotel.cs" />
+    <Compile Include="D_Reservacion.cs" />
     <Compile Include="D_Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
