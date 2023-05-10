@@ -128,16 +128,16 @@ namespace Sistema.Vistas.Forms_hotel
             else
             {
 
-                textID_user.Text = dataGridClientes.CurrentRow.Cells[0].Value.ToString();
-                textNombres.Text = dataGridClientes.CurrentRow.Cells[1].Value.ToString();
-                textApeP.Text = dataGridClientes.CurrentRow.Cells[2].Value.ToString();
-                textApeM.Text = dataGridClientes.CurrentRow.Cells[3].Value.ToString();
-                textDomicilio.Text = dataGridClientes.CurrentRow.Cells[4].Value.ToString();
-                textCorreo.Text = dataGridClientes.CurrentRow.Cells[5].Value.ToString();
-                textCelular.Text = dataGridClientes.CurrentRow.Cells[6].Value.ToString();
-                textReferencia.Text = dataGridClientes.CurrentRow.Cells[7].Value.ToString();
-                dateTimeFechaNaci.Text = dataGridClientes.CurrentRow.Cells[8].Value.ToString();
-                comboBoxCivil.Text = dataGridClientes.CurrentRow.Cells[9].Value.ToString();
+                textID_user.Text = dataGridClientes.CurrentRow.Cells[1].Value.ToString();
+                textNombres.Text = dataGridClientes.CurrentRow.Cells[2].Value.ToString();
+                textApeP.Text = dataGridClientes.CurrentRow.Cells[3].Value.ToString();
+                textApeM.Text = dataGridClientes.CurrentRow.Cells[4].Value.ToString();
+                textDomicilio.Text = dataGridClientes.CurrentRow.Cells[5].Value.ToString();
+                textCorreo.Text = dataGridClientes.CurrentRow.Cells[6].Value.ToString();
+                textCelular.Text = dataGridClientes.CurrentRow.Cells[7].Value.ToString();
+                textReferencia.Text = dataGridClientes.CurrentRow.Cells[8].Value.ToString();
+                dateTimeFechaNaci.Text = dataGridClientes.CurrentRow.Cells[9].Value.ToString();
+                comboBoxCivil.Text = dataGridClientes.CurrentRow.Cells[10].Value.ToString();
 
             }
         }
@@ -246,6 +246,11 @@ namespace Sistema.Vistas.Forms_hotel
                  
 
             }
+        }
+
+        private void dataGridClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

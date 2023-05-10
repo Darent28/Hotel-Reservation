@@ -93,3 +93,4 @@ C:\Users\daren\source\repos\MAD\Sistema\Sistema.Vistas\obj\Debug\Sistema.Vistas.
 C:\Users\daren\source\repos\MAD\Sistema\Sistema.Vistas\obj\Debug\Sistema.Vistas.Forms_hotel.OPER_principal.resources
 C:\Users\daren\source\repos\MAD\Sistema\Sistema.Vistas\obj\Debug\Sistema.Vistas.Forms_hotel.OPER_reservacion.resources
 C:\Users\daren\source\repos\MAD\Sistema\Sistema.Vistas\obj\Debug\Sistema.Vistas.Properties.Resources.resources
+C:\Users\daren\source\repos\MAD\Sistema\Sistema.Vistas\obj\Debug\Sistema.Vistas.Forms_hotel.ADMIN_hhConjunto.resources

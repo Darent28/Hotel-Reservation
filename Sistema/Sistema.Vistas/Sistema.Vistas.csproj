@@ -53,6 +53,12 @@
     <Compile Include="Forms_hotel\ADMIN_habitacion.Designer.cs">
       <DependentUpon>ADMIN_habitacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms_hotel\ADMIN_hhConjunto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_hotel\ADMIN_hhConjunto.Designer.cs">
+      <DependentUpon>ADMIN_hhConjunto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms_hotel\ADMIN_hoteles.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +142,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Forms_hotel\ADMIN_habitacion.resx">
       <DependentUpon>ADMIN_habitacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_hotel\ADMIN_hhConjunto.resx">
+      <DependentUpon>ADMIN_hhConjunto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms_hotel\ADMIN_hoteles.resx">
       <DependentUpon>ADMIN_hoteles.cs</DependentUpon>

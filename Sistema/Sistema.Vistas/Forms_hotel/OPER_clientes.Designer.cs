@@ -339,6 +339,7 @@ namespace Sistema.Vistas.Forms_hotel
             this.dataGridClientes.Size = new System.Drawing.Size(692, 183);
             this.dataGridClientes.TabIndex = 99;
             this.dataGridClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridClientes_CellClick);
+            this.dataGridClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridClientes_CellContentClick);
             // 
             // btnRegistrarClientes
             // 

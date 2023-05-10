@@ -186,7 +186,7 @@ namespace Sistema.Vistas.Forms_hotel
 
                 if (respuesta.Equals("OK"))
                 {
-                    MessageBox.Show("Habitacion Editada", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Habitacion Actualizada", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ADMIN_habitacion_Load(sender, e);
                 }
                 else

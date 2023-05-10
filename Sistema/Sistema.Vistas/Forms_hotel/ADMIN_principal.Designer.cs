@@ -43,24 +43,27 @@ namespace Sistema.Vistas.Forms_hotel
             this.registroDeHotelesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hotelesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.habitacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.conjuntoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cerrarSecionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fechaHora = new System.Windows.Forms.Timer(this.components);
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.dgvRegRen = new System.Windows.Forms.DataGridView();
             this.btnReem = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textReembolso = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.cerrarSecionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRegRen)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -76,7 +79,7 @@ namespace Sistema.Vistas.Forms_hotel
             this.panel1.Controls.Add(this.menuStrip1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(978, 147);
+            this.panel1.Size = new System.Drawing.Size(1158, 147);
             this.panel1.TabIndex = 0;
             // 
             // fecha
@@ -163,7 +166,7 @@ namespace Sistema.Vistas.Forms_hotel
             this.cerrarSecionToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(978, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1158, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -171,7 +174,8 @@ namespace Sistema.Vistas.Forms_hotel
             // 
             this.registroDeHotelesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.hotelesToolStripMenuItem,
-            this.habitacionesToolStripMenuItem});
+            this.habitacionesToolStripMenuItem,
+            this.conjuntoToolStripMenuItem});
             this.registroDeHotelesToolStripMenuItem.Name = "registroDeHotelesToolStripMenuItem";
             this.registroDeHotelesToolStripMenuItem.Size = new System.Drawing.Size(119, 20);
             this.registroDeHotelesToolStripMenuItem.Text = "Registro de hoteles";
@@ -190,6 +194,13 @@ namespace Sistema.Vistas.Forms_hotel
             this.habitacionesToolStripMenuItem.Text = "Habitaciones";
             this.habitacionesToolStripMenuItem.Click += new System.EventHandler(this.habitacionesToolStripMenuItem_Click);
             // 
+            // conjuntoToolStripMenuItem
+            // 
+            this.conjuntoToolStripMenuItem.Name = "conjuntoToolStripMenuItem";
+            this.conjuntoToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.conjuntoToolStripMenuItem.Text = "Conjunto";
+            this.conjuntoToolStripMenuItem.Click += new System.EventHandler(this.conjuntoToolStripMenuItem_Click);
+            // 
             // registroDeUsuariosToolStripMenuItem
             // 
             this.registroDeUsuariosToolStripMenuItem.Name = "registroDeUsuariosToolStripMenuItem";
@@ -203,6 +214,13 @@ namespace Sistema.Vistas.Forms_hotel
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.reportesToolStripMenuItem.Text = "Reportes";
             this.reportesToolStripMenuItem.Click += new System.EventHandler(this.reportesToolStripMenuItem_Click);
+            // 
+            // cerrarSecionToolStripMenuItem
+            // 
+            this.cerrarSecionToolStripMenuItem.Name = "cerrarSecionToolStripMenuItem";
+            this.cerrarSecionToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
+            this.cerrarSecionToolStripMenuItem.Text = "Cerrar sesión";
+            this.cerrarSecionToolStripMenuItem.Click += new System.EventHandler(this.cerrarSecionToolStripMenuItem_Click);
             // 
             // fechaHora
             // 
@@ -232,47 +250,62 @@ namespace Sistema.Vistas.Forms_hotel
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Location = new System.Drawing.Point(310, 276);
+            this.tabControl1.Location = new System.Drawing.Point(271, 276);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(565, 207);
+            this.tabControl1.Size = new System.Drawing.Size(868, 383);
             this.tabControl1.TabIndex = 3;
             // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.LightGray;
+            this.tabPage1.Controls.Add(this.dgvRegRen);
             this.tabPage1.Controls.Add(this.btnReem);
-            this.tabPage1.Controls.Add(this.textBox1);
+            this.tabPage1.Controls.Add(this.textReembolso);
             this.tabPage1.Controls.Add(this.label6);
             this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Location = new System.Drawing.Point(4, 28);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(557, 175);
+            this.tabPage1.Size = new System.Drawing.Size(860, 351);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Cancelar reservación";
+            // 
+            // dgvRegRen
+            // 
+            this.dgvRegRen.AllowUserToAddRows = false;
+            this.dgvRegRen.AllowUserToDeleteRows = false;
+            this.dgvRegRen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRegRen.Location = new System.Drawing.Point(23, 109);
+            this.dgvRegRen.Name = "dgvRegRen";
+            this.dgvRegRen.RowHeadersWidth = 51;
+            this.dgvRegRen.RowTemplate.Height = 24;
+            this.dgvRegRen.Size = new System.Drawing.Size(814, 226);
+            this.dgvRegRen.TabIndex = 9;
+            this.dgvRegRen.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRegRen_CellClick);
             // 
             // btnReem
             // 
             this.btnReem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnReem.Location = new System.Drawing.Point(210, 112);
+            this.btnReem.Location = new System.Drawing.Point(418, 51);
             this.btnReem.Name = "btnReem";
             this.btnReem.Size = new System.Drawing.Size(119, 42);
             this.btnReem.TabIndex = 3;
             this.btnReem.Text = "Reembolsar";
             this.btnReem.UseVisualStyleBackColor = false;
+            this.btnReem.Click += new System.EventHandler(this.btnReem_Click);
             // 
-            // textBox1
+            // textReembolso
             // 
-            this.textBox1.Location = new System.Drawing.Point(278, 64);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(161, 26);
-            this.textBox1.TabIndex = 2;
+            this.textReembolso.Location = new System.Drawing.Point(209, 60);
+            this.textReembolso.Name = "textReembolso";
+            this.textReembolso.Size = new System.Drawing.Size(161, 26);
+            this.textReembolso.TabIndex = 2;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(88, 67);
+            this.label6.Location = new System.Drawing.Point(19, 63);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(148, 19);
             this.label6.TabIndex = 1;
@@ -281,18 +314,11 @@ namespace Sistema.Vistas.Forms_hotel
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(88, 23);
+            this.label5.Location = new System.Drawing.Point(19, 19);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(295, 19);
             this.label5.TabIndex = 0;
             this.label5.Text = "Coloque el código de reservación para cancelar";
-            // 
-            // cerrarSecionToolStripMenuItem
-            // 
-            this.cerrarSecionToolStripMenuItem.Name = "cerrarSecionToolStripMenuItem";
-            this.cerrarSecionToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
-            this.cerrarSecionToolStripMenuItem.Text = "Cerrar sesión";
-            this.cerrarSecionToolStripMenuItem.Click += new System.EventHandler(this.cerrarSecionToolStripMenuItem_Click);
             // 
             // ADMIN_principal
             // 
@@ -300,7 +326,7 @@ namespace Sistema.Vistas.Forms_hotel
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Gold;
-            this.ClientSize = new System.Drawing.Size(976, 526);
+            this.ClientSize = new System.Drawing.Size(1151, 671);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pictureBox2);
@@ -323,6 +349,7 @@ namespace Sistema.Vistas.Forms_hotel
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRegRen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -350,9 +377,11 @@ namespace Sistema.Vistas.Forms_hotel
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Button btnReem;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textReembolso;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ToolStripMenuItem cerrarSecionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem conjuntoToolStripMenuItem;
+        private System.Windows.Forms.DataGridView dgvRegRen;
     }
 }

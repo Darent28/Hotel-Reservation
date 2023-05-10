@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sistema.Negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -56,6 +57,17 @@ namespace Sistema.Vistas.Forms_hotel
         private void ADMIN_principal_Load(object sender, EventArgs e)
         {
             nombreAd.Text = nombre;
+
+            textReembolso.Clear();
+
+            try
+            {
+                dgvRegRen.DataSource = N_Reservacion.sp_Get_Reservacion();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
         }
 
         private void cerrarSecionToolStripMenuItem_Click(object sender, EventArgs e)
@@ -70,6 +82,59 @@ namespace Sistema.Vistas.Forms_hotel
                 this.Hide();
             }
         
+        }
+
+        private void conjuntoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ADMIN_hhConjunto paginaConjunto = new ADMIN_hhConjunto(rfc, nombre);
+            paginaConjunto.Show();
+        }
+
+        private void dgvRegRen_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvRegRen.RowCount < 1)
+            {
+                return;
+            }
+            else
+            {
+                textReembolso.Text = dgvRegRen.CurrentRow.Cells[0].Value.ToString();
+
+            }
+        }
+
+        private void btnReem_Click(object sender, EventArgs e)
+        {
+            string reembolso = textReembolso.Text;
+
+            if (reembolso.CompareTo("") == 0)
+            {
+                MessageBox.Show("Favor de poner el codigo que quiere reembolsar.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+
+                DialogResult Opcion;
+                Opcion = MessageBox.Show("Deseas Reembolsar la reservacion: " + "[" + reembolso.ToString() + "]" + "?", "Atencion", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+                if (Opcion == DialogResult.OK)
+                {
+                    string respuesta = N_Reservacion.sp_Reembolso(reembolso, "U");
+
+                    if (respuesta.Equals("OK"))
+                    {
+                        MessageBox.Show("Reservacion reembolsada", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ADMIN_principal_Load(sender, e);
+                    }
+                    else
+                    {
+                        MessageBox.Show(respuesta, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        ADMIN_principal_Load(sender, e);
+                    }
+                }
+
+
+            }
         }
     }
 }

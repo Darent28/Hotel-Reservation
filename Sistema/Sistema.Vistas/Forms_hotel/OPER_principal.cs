@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sistema.Negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -36,13 +37,26 @@ namespace Sistema.Vistas.Forms_hotel
 
         private void registrarReservaciónToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OPER_reservacion paginaREsrv = new OPER_reservacion();
+            OPER_reservacion paginaREsrv = new OPER_reservacion(rfc, nombre);
             paginaREsrv.Show();
         }
 
         private void OPER_principal_Load(object sender, EventArgs e)
         {
             nombreAd.Text = nombre;
+            si.Checked = false;
+            no.Checked = false;
+            textcheckin.Clear();
+
+            try
+            {
+                dgvReser.DataSource = N_Reservacion.sp_Get_Reservacion();
+                dgvCheckin.DataSource = N_Checkin.sp_Get_Checkin(); 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
         }
 
         private void cerrarSeciónToolStripMenuItem_Click(object sender, EventArgs e)
@@ -55,6 +69,82 @@ namespace Sistema.Vistas.Forms_hotel
                 Forms_hotel.InicioSesion frm = new Forms_hotel.InicioSesion();
                 frm.Show();
                 this.Hide();
+            }
+        }
+
+        private void dgvReser_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvReser.RowCount < 1)
+            {
+                return;
+            }
+            else
+            {
+                textcheckin.Text = dgvReser.CurrentRow.Cells[0].Value.ToString();
+
+            }
+        }
+
+        private void textcheckin_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string checkin = textcheckin.Text;
+            bool siasis = si.Checked;
+            bool noasis = no.Checked;
+            int asistio = 0;
+
+
+            if (checkin.CompareTo("") == 0)
+            { 
+                MessageBox.Show("Favor de poner el codigo del checkin.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+
+                if (siasis == true)
+                {
+                    asistio = 0;
+                }
+                else if (noasis == true)
+                {
+                    asistio = 1;
+                }
+                else
+                {
+                    MessageBox.Show("Favor de llenar el apartado Asistio.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                string respuesta = N_Checkin.sp_Checkin(asistio, checkin);
+
+                    if (respuesta.Equals("OK"))
+                    {
+                        MessageBox.Show("Reservacion reembolsada", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        OPER_principal_Load(sender, e);
+                    }
+                    else
+                    {
+                        MessageBox.Show(respuesta, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        OPER_principal_Load(sender, e);
+                    }
+
+            }
+
+        }
+
+        private void dgvCheckin_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvCheckin.RowCount < 1)
+            {
+                return;
+            }
+            else
+            {
+                textcheckin.Text = dgvCheckin.CurrentRow.Cells[2].Value.ToString();
+
             }
         }
     }
