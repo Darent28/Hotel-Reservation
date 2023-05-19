@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace Sistema.Entidad
 {
-    public class Checkin
+    public class Checkout
     {
+        public int id_checkout { get; set; }
+        public int extendio { get; set; }
+        public string fFinC { get; set; }
         public int id_checkin { get; set; }
-        public int asistio { get; set; }
-        public string codigo { get; set; }
     }
 }
