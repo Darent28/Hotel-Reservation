@@ -21,7 +21,8 @@ namespace Sistema.Datos
                 SqlCon = Connection.Get_Instancia().CrearConexion();
                 SqlCommand Comando = new SqlCommand("sp_Checkin", SqlCon);
                 Comando.CommandType = CommandType.StoredProcedure;
-                Comando.Parameters.Add("@asistio", SqlDbType.VarChar).Value = Obj.asistio;
+                Comando.Parameters.Add("@id_checkin", SqlDbType.Int).Value = Obj.id_checkin;
+                Comando.Parameters.Add("@asistio", SqlDbType.Int).Value = Obj.asistio;
                 Comando.Parameters.Add("@codigo", SqlDbType.VarChar).Value = Obj.codigo;
                 SqlCon.Open();
                 Rpta = Comando.ExecuteNonQuery() == 1 ? "OK" : "OK";
