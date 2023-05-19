@@ -32,49 +32,49 @@ namespace Sistema.Vistas.Forms_hotel
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ADMIN_reportes));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.btnAplicarFH = new System.Windows.Forms.Button();
+            this.datetimepicker1 = new System.Windows.Forms.DateTimePicker();
+            this.cbpais = new System.Windows.Forms.ComboBox();
+            this.cbCiudad = new System.Windows.Forms.ComboBox();
+            this.cbhotel = new System.Windows.Forms.ComboBox();
+            this.checkBoxTodos1 = new System.Windows.Forms.CheckBox();
             this.dataGridFiltroH = new System.Windows.Forms.DataGridView();
+            this.btnAplicarFH = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.cbpais2 = new System.Windows.Forms.ComboBox();
+            this.cbciudad2 = new System.Windows.Forms.ComboBox();
+            this.cbhotel2 = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.checkBoxTodos = new System.Windows.Forms.CheckBox();
             this.dataGridVentas = new System.Windows.Forms.DataGridView();
             this.btnVentas = new System.Windows.Forms.Button();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.checkBoxTodos = new System.Windows.Forms.CheckBox();
-            this.checkBoxTodos1 = new System.Windows.Forms.CheckBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.dataGridClientes = new System.Windows.Forms.DataGridView();
             this.checkAños = new System.Windows.Forms.CheckBox();
             this.dataGridHistorial = new System.Windows.Forms.DataGridView();
             this.btnAplicarFClientes = new System.Windows.Forms.Button();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textcliente = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.dataGridClientes = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridFiltroH)).BeginInit();
+            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridVentas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridHistorial)).BeginInit();
+            this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridHistorial)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -91,145 +91,86 @@ namespace Sistema.Vistas.Forms_hotel
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Gold;
+            this.tabPage1.Controls.Add(this.datetimepicker1);
+            this.tabPage1.Controls.Add(this.cbpais);
+            this.tabPage1.Controls.Add(this.cbCiudad);
+            this.tabPage1.Controls.Add(this.cbhotel);
             this.tabPage1.Controls.Add(this.checkBoxTodos1);
             this.tabPage1.Controls.Add(this.dataGridFiltroH);
             this.tabPage1.Controls.Add(this.btnAplicarFH);
-            this.tabPage1.Controls.Add(this.dateTimePicker1);
-            this.tabPage1.Controls.Add(this.textBox3);
-            this.tabPage1.Controls.Add(this.textBox2);
-            this.tabPage1.Controls.Add(this.textBox1);
             this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 32);
+            this.tabPage1.Location = new System.Drawing.Point(4, 28);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(825, 582);
+            this.tabPage1.Size = new System.Drawing.Size(825, 586);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Ocupación por hotel";
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
-            // tabPage2
+            // datetimepicker1
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.Gold;
-            this.tabPage2.Controls.Add(this.checkBoxTodos);
-            this.tabPage2.Controls.Add(this.dataGridVentas);
-            this.tabPage2.Controls.Add(this.btnVentas);
-            this.tabPage2.Controls.Add(this.dateTimePicker2);
-            this.tabPage2.Controls.Add(this.textBox4);
-            this.tabPage2.Controls.Add(this.textBox5);
-            this.tabPage2.Controls.Add(this.textBox6);
-            this.tabPage2.Controls.Add(this.label6);
-            this.tabPage2.Controls.Add(this.label7);
-            this.tabPage2.Controls.Add(this.label8);
-            this.tabPage2.Controls.Add(this.label9);
-            this.tabPage2.Controls.Add(this.label10);
-            this.tabPage2.Location = new System.Drawing.Point(4, 32);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(825, 582);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Ventas";
+            this.datetimepicker1.CustomFormat = "yyyy";
+            this.datetimepicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datetimepicker1.Location = new System.Drawing.Point(194, 186);
+            this.datetimepicker1.Name = "datetimepicker1";
+            this.datetimepicker1.ShowUpDown = true;
+            this.datetimepicker1.Size = new System.Drawing.Size(137, 26);
+            this.datetimepicker1.TabIndex = 89;
+            this.datetimepicker1.ValueChanged += new System.EventHandler(this.datetimepicker1_ValueChanged);
             // 
-            // tabPage3
+            // cbpais
             // 
-            this.tabPage3.BackColor = System.Drawing.Color.Gold;
-            this.tabPage3.Controls.Add(this.dataGridClientes);
-            this.tabPage3.Controls.Add(this.checkAños);
-            this.tabPage3.Controls.Add(this.dataGridHistorial);
-            this.tabPage3.Controls.Add(this.btnAplicarFClientes);
-            this.tabPage3.Controls.Add(this.dateTimePicker3);
-            this.tabPage3.Controls.Add(this.textBox9);
-            this.tabPage3.Controls.Add(this.label13);
-            this.tabPage3.Controls.Add(this.label14);
-            this.tabPage3.Controls.Add(this.label15);
-            this.tabPage3.Location = new System.Drawing.Point(4, 32);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(825, 582);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Historial del cliente";
+            this.cbpais.FormattingEnabled = true;
+            this.cbpais.Location = new System.Drawing.Point(194, 139);
+            this.cbpais.Name = "cbpais";
+            this.cbpais.Size = new System.Drawing.Size(137, 27);
+            this.cbpais.TabIndex = 24;
             // 
-            // label1
+            // cbCiudad
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(101, 50);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(618, 46);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Esta pantalla es para consultar datos de ocupación por hotel. Coloque los filtros" +
-    "\r\npara mostrar los datos.\r\n";
+            this.cbCiudad.FormattingEnabled = true;
+            this.cbCiudad.Location = new System.Drawing.Point(525, 139);
+            this.cbCiudad.Name = "cbCiudad";
+            this.cbCiudad.Size = new System.Drawing.Size(128, 27);
+            this.cbCiudad.TabIndex = 24;
             // 
-            // label2
+            // cbhotel
             // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(134, 143);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 23);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "País:";
+            this.cbhotel.FormattingEnabled = true;
+            this.cbhotel.Location = new System.Drawing.Point(525, 184);
+            this.cbhotel.Name = "cbhotel";
+            this.cbhotel.Size = new System.Drawing.Size(128, 27);
+            this.cbhotel.TabIndex = 24;
             // 
-            // label3
+            // checkBoxTodos1
             // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(132, 192);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 23);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Año:";
+            this.checkBoxTodos1.AutoSize = true;
+            this.checkBoxTodos1.ForeColor = System.Drawing.Color.Black;
+            this.checkBoxTodos1.Location = new System.Drawing.Point(666, 191);
+            this.checkBoxTodos1.Name = "checkBoxTodos1";
+            this.checkBoxTodos1.Size = new System.Drawing.Size(64, 23);
+            this.checkBoxTodos1.TabIndex = 23;
+            this.checkBoxTodos1.Text = "Todos";
+            this.checkBoxTodos1.UseVisualStyleBackColor = true;
+            this.checkBoxTodos1.CheckedChanged += new System.EventHandler(this.checkBoxTodos1_CheckedChanged);
             // 
-            // label4
+            // dataGridFiltroH
             // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(428, 143);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 23);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Ciudad:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(441, 192);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 23);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Hotel:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(194, 140);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(137, 30);
-            this.textBox1.TabIndex = 5;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(525, 140);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(128, 30);
-            this.textBox2.TabIndex = 6;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(525, 189);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(128, 30);
-            this.textBox3.TabIndex = 7;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.CustomFormat = "yyyy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(194, 189);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(137, 30);
-            this.dateTimePicker1.TabIndex = 8;
+            this.dataGridFiltroH.AllowUserToAddRows = false;
+            this.dataGridFiltroH.AllowUserToDeleteRows = false;
+            this.dataGridFiltroH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridFiltroH.Location = new System.Drawing.Point(91, 315);
+            this.dataGridFiltroH.Name = "dataGridFiltroH";
+            this.dataGridFiltroH.ReadOnly = true;
+            this.dataGridFiltroH.RowHeadersWidth = 51;
+            this.dataGridFiltroH.RowTemplate.Height = 24;
+            this.dataGridFiltroH.Size = new System.Drawing.Size(651, 214);
+            this.dataGridFiltroH.TabIndex = 10;
+            this.dataGridFiltroH.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridFiltroH_CellContentClick);
             // 
             // btnAplicarFH
             // 
@@ -240,20 +181,131 @@ namespace Sistema.Vistas.Forms_hotel
             this.btnAplicarFH.TabIndex = 9;
             this.btnAplicarFH.Text = "Aplicar";
             this.btnAplicarFH.UseVisualStyleBackColor = false;
+            this.btnAplicarFH.Click += new System.EventHandler(this.btnAplicarFH_Click);
             // 
-            // dataGridFiltroH
+            // label5
             // 
-            this.dataGridFiltroH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridFiltroH.Location = new System.Drawing.Point(91, 315);
-            this.dataGridFiltroH.Name = "dataGridFiltroH";
-            this.dataGridFiltroH.ReadOnly = true;
-            this.dataGridFiltroH.RowHeadersWidth = 51;
-            this.dataGridFiltroH.RowTemplate.Height = 24;
-            this.dataGridFiltroH.Size = new System.Drawing.Size(651, 214);
-            this.dataGridFiltroH.TabIndex = 10;
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(441, 192);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(45, 19);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Hotel:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(428, 143);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(55, 19);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Ciudad:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(132, 192);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(37, 19);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Año:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(134, 143);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(36, 19);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "País:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(101, 50);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(494, 38);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Esta pantalla es para consultar datos de ocupación por hotel. Coloque los filtros" +
+    "\r\npara mostrar los datos.\r\n";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.BackColor = System.Drawing.Color.Gold;
+            this.tabPage2.Controls.Add(this.cbpais2);
+            this.tabPage2.Controls.Add(this.cbciudad2);
+            this.tabPage2.Controls.Add(this.cbhotel2);
+            this.tabPage2.Controls.Add(this.dateTimePicker2);
+            this.tabPage2.Controls.Add(this.checkBoxTodos);
+            this.tabPage2.Controls.Add(this.dataGridVentas);
+            this.tabPage2.Controls.Add(this.btnVentas);
+            this.tabPage2.Controls.Add(this.label6);
+            this.tabPage2.Controls.Add(this.label7);
+            this.tabPage2.Controls.Add(this.label8);
+            this.tabPage2.Controls.Add(this.label9);
+            this.tabPage2.Controls.Add(this.label10);
+            this.tabPage2.Location = new System.Drawing.Point(4, 28);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(825, 586);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Ventas";
+            // 
+            // cbpais2
+            // 
+            this.cbpais2.FormattingEnabled = true;
+            this.cbpais2.Location = new System.Drawing.Point(173, 143);
+            this.cbpais2.Name = "cbpais2";
+            this.cbpais2.Size = new System.Drawing.Size(137, 27);
+            this.cbpais2.TabIndex = 91;
+            // 
+            // cbciudad2
+            // 
+            this.cbciudad2.FormattingEnabled = true;
+            this.cbciudad2.Location = new System.Drawing.Point(504, 143);
+            this.cbciudad2.Name = "cbciudad2";
+            this.cbciudad2.Size = new System.Drawing.Size(128, 27);
+            this.cbciudad2.TabIndex = 92;
+            // 
+            // cbhotel2
+            // 
+            this.cbhotel2.FormattingEnabled = true;
+            this.cbhotel2.Location = new System.Drawing.Point(504, 188);
+            this.cbhotel2.Name = "cbhotel2";
+            this.cbhotel2.Size = new System.Drawing.Size(128, 27);
+            this.cbhotel2.TabIndex = 93;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.CustomFormat = "yyyy";
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker2.Location = new System.Drawing.Point(173, 190);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.ShowUpDown = true;
+            this.dateTimePicker2.Size = new System.Drawing.Size(137, 26);
+            this.dateTimePicker2.TabIndex = 90;
+            // 
+            // checkBoxTodos
+            // 
+            this.checkBoxTodos.AutoSize = true;
+            this.checkBoxTodos.ForeColor = System.Drawing.Color.Black;
+            this.checkBoxTodos.Location = new System.Drawing.Point(662, 195);
+            this.checkBoxTodos.Name = "checkBoxTodos";
+            this.checkBoxTodos.Size = new System.Drawing.Size(64, 23);
+            this.checkBoxTodos.TabIndex = 22;
+            this.checkBoxTodos.Text = "Todos";
+            this.checkBoxTodos.UseVisualStyleBackColor = true;
+            this.checkBoxTodos.CheckedChanged += new System.EventHandler(this.checkBoxTodos_CheckedChanged);
             // 
             // dataGridVentas
             // 
+            this.dataGridVentas.AllowUserToAddRows = false;
+            this.dataGridVentas.AllowUserToDeleteRows = false;
             this.dataGridVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridVentas.Location = new System.Drawing.Point(87, 317);
             this.dataGridVentas.Name = "dataGridVentas";
@@ -272,36 +324,7 @@ namespace Sistema.Vistas.Forms_hotel
             this.btnVentas.TabIndex = 20;
             this.btnVentas.Text = "Aplicar";
             this.btnVentas.UseVisualStyleBackColor = false;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.CustomFormat = "yyyy";
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(191, 192);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(137, 30);
-            this.dateTimePicker2.TabIndex = 19;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(522, 192);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(128, 30);
-            this.textBox4.TabIndex = 18;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(522, 143);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(128, 30);
-            this.textBox5.TabIndex = 17;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(191, 143);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(137, 30);
-            this.textBox6.TabIndex = 16;
+            this.btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
             // 
             // label6
             // 
@@ -309,7 +332,7 @@ namespace Sistema.Vistas.Forms_hotel
             this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(438, 195);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(55, 23);
+            this.label6.Size = new System.Drawing.Size(45, 19);
             this.label6.TabIndex = 15;
             this.label6.Text = "Hotel:";
             // 
@@ -319,7 +342,7 @@ namespace Sistema.Vistas.Forms_hotel
             this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(425, 146);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(68, 23);
+            this.label7.Size = new System.Drawing.Size(55, 19);
             this.label7.TabIndex = 14;
             this.label7.Text = "Ciudad:";
             // 
@@ -329,7 +352,7 @@ namespace Sistema.Vistas.Forms_hotel
             this.label8.ForeColor = System.Drawing.Color.Black;
             this.label8.Location = new System.Drawing.Point(129, 195);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(45, 23);
+            this.label8.Size = new System.Drawing.Size(37, 19);
             this.label8.TabIndex = 13;
             this.label8.Text = "Año:";
             // 
@@ -339,7 +362,7 @@ namespace Sistema.Vistas.Forms_hotel
             this.label9.ForeColor = System.Drawing.Color.Black;
             this.label9.Location = new System.Drawing.Point(131, 146);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(43, 23);
+            this.label9.Size = new System.Drawing.Size(36, 19);
             this.label9.TabIndex = 12;
             this.label9.Text = "País:";
             // 
@@ -349,46 +372,68 @@ namespace Sistema.Vistas.Forms_hotel
             this.label10.ForeColor = System.Drawing.Color.Black;
             this.label10.Location = new System.Drawing.Point(129, 52);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(538, 46);
+            this.label10.Size = new System.Drawing.Size(432, 38);
             this.label10.TabIndex = 11;
             this.label10.Text = "Esta pantalla es para consultar datos de las ventas. Coloque los filtros\r\npara mo" +
     "strar los datos.\r\n";
             // 
-            // checkBoxTodos
+            // tabPage3
             // 
-            this.checkBoxTodos.AutoSize = true;
-            this.checkBoxTodos.ForeColor = System.Drawing.Color.Black;
-            this.checkBoxTodos.Location = new System.Drawing.Point(662, 195);
-            this.checkBoxTodos.Name = "checkBoxTodos";
-            this.checkBoxTodos.Size = new System.Drawing.Size(76, 27);
-            this.checkBoxTodos.TabIndex = 22;
-            this.checkBoxTodos.Text = "Todos";
-            this.checkBoxTodos.UseVisualStyleBackColor = true;
+            this.tabPage3.BackColor = System.Drawing.Color.Gold;
+            this.tabPage3.Controls.Add(this.dateTimePicker3);
+            this.tabPage3.Controls.Add(this.dataGridClientes);
+            this.tabPage3.Controls.Add(this.checkAños);
+            this.tabPage3.Controls.Add(this.dataGridHistorial);
+            this.tabPage3.Controls.Add(this.btnAplicarFClientes);
+            this.tabPage3.Controls.Add(this.textcliente);
+            this.tabPage3.Controls.Add(this.label13);
+            this.tabPage3.Controls.Add(this.label14);
+            this.tabPage3.Controls.Add(this.label15);
+            this.tabPage3.Location = new System.Drawing.Point(4, 28);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(825, 586);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Historial del cliente";
             // 
-            // checkBoxTodos1
+            // dateTimePicker3
             // 
-            this.checkBoxTodos1.AutoSize = true;
-            this.checkBoxTodos1.ForeColor = System.Drawing.Color.Black;
-            this.checkBoxTodos1.Location = new System.Drawing.Point(666, 191);
-            this.checkBoxTodos1.Name = "checkBoxTodos1";
-            this.checkBoxTodos1.Size = new System.Drawing.Size(76, 27);
-            this.checkBoxTodos1.TabIndex = 23;
-            this.checkBoxTodos1.Text = "Todos";
-            this.checkBoxTodos1.UseVisualStyleBackColor = true;
+            this.dateTimePicker3.CustomFormat = "yyyy";
+            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker3.Location = new System.Drawing.Point(594, 262);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.ShowUpDown = true;
+            this.dateTimePicker3.Size = new System.Drawing.Size(137, 26);
+            this.dateTimePicker3.TabIndex = 90;
+            // 
+            // dataGridClientes
+            // 
+            this.dataGridClientes.AllowUserToAddRows = false;
+            this.dataGridClientes.AllowUserToDeleteRows = false;
+            this.dataGridClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridClientes.Location = new System.Drawing.Point(90, 84);
+            this.dataGridClientes.Name = "dataGridClientes";
+            this.dataGridClientes.RowHeadersWidth = 51;
+            this.dataGridClientes.RowTemplate.Height = 24;
+            this.dataGridClientes.Size = new System.Drawing.Size(641, 142);
+            this.dataGridClientes.TabIndex = 35;
+            this.dataGridClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridClientes_CellClick);
             // 
             // checkAños
             // 
             this.checkAños.AutoSize = true;
             this.checkAños.ForeColor = System.Drawing.Color.Black;
-            this.checkAños.Location = new System.Drawing.Point(191, 206);
+            this.checkAños.Location = new System.Drawing.Point(613, 233);
             this.checkAños.Name = "checkAños";
-            this.checkAños.Size = new System.Drawing.Size(143, 27);
+            this.checkAños.Size = new System.Drawing.Size(118, 23);
             this.checkAños.TabIndex = 34;
             this.checkAños.Text = "Todos los años";
             this.checkAños.UseVisualStyleBackColor = true;
+            this.checkAños.CheckedChanged += new System.EventHandler(this.checkAños_CheckedChanged);
             // 
             // dataGridHistorial
             // 
+            this.dataGridHistorial.AllowUserToAddRows = false;
+            this.dataGridHistorial.AllowUserToDeleteRows = false;
             this.dataGridHistorial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridHistorial.Location = new System.Drawing.Point(90, 311);
             this.dataGridHistorial.Name = "dataGridHistorial";
@@ -401,46 +446,39 @@ namespace Sistema.Vistas.Forms_hotel
             // btnAplicarFClientes
             // 
             this.btnAplicarFClientes.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnAplicarFClientes.Location = new System.Drawing.Point(337, 248);
+            this.btnAplicarFClientes.Location = new System.Drawing.Point(320, 544);
             this.btnAplicarFClientes.Name = "btnAplicarFClientes";
             this.btnAplicarFClientes.Size = new System.Drawing.Size(164, 38);
             this.btnAplicarFClientes.TabIndex = 32;
             this.btnAplicarFClientes.Text = "Aplicar";
             this.btnAplicarFClientes.UseVisualStyleBackColor = false;
+            this.btnAplicarFClientes.Click += new System.EventHandler(this.btnAplicarFClientes_Click);
             // 
-            // dateTimePicker3
+            // textcliente
             // 
-            this.dateTimePicker3.CustomFormat = "yyyy";
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker3.Location = new System.Drawing.Point(191, 170);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(137, 30);
-            this.dateTimePicker3.TabIndex = 31;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(191, 112);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(137, 30);
-            this.textBox9.TabIndex = 28;
+            this.textcliente.Enabled = false;
+            this.textcliente.Location = new System.Drawing.Point(171, 262);
+            this.textcliente.Name = "textcliente";
+            this.textcliente.Size = new System.Drawing.Size(137, 26);
+            this.textcliente.TabIndex = 28;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(131, 170);
+            this.label13.Location = new System.Drawing.Point(499, 263);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(45, 23);
+            this.label13.Size = new System.Drawing.Size(76, 19);
             this.label13.TabIndex = 25;
-            this.label13.Text = "Año:";
+            this.label13.Text = "Mes y año:";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(118, 115);
+            this.label14.Location = new System.Drawing.Point(98, 265);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(67, 23);
+            this.label14.Size = new System.Drawing.Size(54, 19);
             this.label14.TabIndex = 24;
             this.label14.Text = "Cliente:";
             // 
@@ -450,24 +488,14 @@ namespace Sistema.Vistas.Forms_hotel
             this.label15.ForeColor = System.Drawing.Color.Black;
             this.label15.Location = new System.Drawing.Point(103, 27);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(599, 46);
+            this.label15.Size = new System.Drawing.Size(479, 38);
             this.label15.TabIndex = 23;
             this.label15.Text = "Esta pantalla es para consultar el historial del cliente. Coloque los filtros\r\npa" +
     "ra mostrar los datos. El cliente lo puede buscar por apellidos, RFC o correo.\r\n";
             // 
-            // dataGridClientes
-            // 
-            this.dataGridClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridClientes.Location = new System.Drawing.Point(358, 112);
-            this.dataGridClientes.Name = "dataGridClientes";
-            this.dataGridClientes.RowHeadersWidth = 51;
-            this.dataGridClientes.RowTemplate.Height = 24;
-            this.dataGridClientes.Size = new System.Drawing.Size(373, 81);
-            this.dataGridClientes.TabIndex = 35;
-            // 
             // ADMIN_reportes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.DimGray;
@@ -480,17 +508,18 @@ namespace Sistema.Vistas.Forms_hotel
             this.Name = "ADMIN_reportes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reportes";
+            this.Load += new System.EventHandler(this.ADMIN_reportes_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridFiltroH)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridVentas)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridFiltroH)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridVentas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridHistorial)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridHistorial)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -501,10 +530,6 @@ namespace Sistema.Vistas.Forms_hotel
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.DataGridView dataGridFiltroH;
         private System.Windows.Forms.Button btnAplicarFH;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -516,10 +541,6 @@ namespace Sistema.Vistas.Forms_hotel
         private System.Windows.Forms.CheckBox checkBoxTodos;
         private System.Windows.Forms.DataGridView dataGridVentas;
         private System.Windows.Forms.Button btnVentas;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
@@ -529,10 +550,18 @@ namespace Sistema.Vistas.Forms_hotel
         private System.Windows.Forms.CheckBox checkAños;
         private System.Windows.Forms.DataGridView dataGridHistorial;
         private System.Windows.Forms.Button btnAplicarFClientes;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox textcliente;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.ComboBox cbpais;
+        private System.Windows.Forms.ComboBox cbCiudad;
+        private System.Windows.Forms.ComboBox cbhotel;
+        private System.Windows.Forms.DateTimePicker datetimepicker1;
+        private System.Windows.Forms.ComboBox cbpais2;
+        private System.Windows.Forms.ComboBox cbciudad2;
+        private System.Windows.Forms.ComboBox cbhotel2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker3;
     }
 }

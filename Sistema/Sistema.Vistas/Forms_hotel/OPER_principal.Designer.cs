@@ -46,7 +46,36 @@ namespace Sistema.Vistas.Forms_hotel
             this.timerOP = new System.Windows.Forms.Timer(this.components);
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.txtCargar = new System.Windows.Forms.Button();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.checkSerusados = new System.Windows.Forms.CheckBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textServUsados = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.numericDescu = new System.Windows.Forms.NumericUpDown();
+            this.textPrecio = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textNumfactura = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.dgvFactura = new System.Windows.Forms.DataGridView();
+            this.btnFacturar = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textreserF = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dgvCheckin = new System.Windows.Forms.DataGridView();
+            this.btnCheck = new System.Windows.Forms.Button();
+            this.textIDcheckout = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dateTimeExt = new System.Windows.Forms.DateTimePicker();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.textReserOut = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.gbasistio = new System.Windows.Forms.GroupBox();
             this.no = new System.Windows.Forms.RadioButton();
@@ -57,34 +86,23 @@ namespace Sistema.Vistas.Forms_hotel
             this.button1 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dgvCheckin = new System.Windows.Forms.DataGridView();
-            this.btnFacturar = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnExtender = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.dateTimeExt = new System.Windows.Forms.DateTimePicker();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textReserOut = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.tabControl1.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericDescu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFactura)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCheckin)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.gbasistio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCheckin)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -239,15 +257,322 @@ namespace Sistema.Vistas.Forms_hotel
     "cancelaciones.\r\nO puede hacer alguna reservación y registro del cliente, oprimie" +
     "ndo la opción en el\r\nmenú de arriba.\r\n";
             // 
-            // tabControl1
+            // txtCargar
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(263, 307);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(858, 563);
-            this.tabControl1.TabIndex = 3;
+            this.txtCargar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtCargar.Location = new System.Drawing.Point(72, 607);
+            this.txtCargar.Name = "txtCargar";
+            this.txtCargar.Size = new System.Drawing.Size(147, 59);
+            this.txtCargar.TabIndex = 2;
+            this.txtCargar.Text = "Cargar";
+            this.txtCargar.UseVisualStyleBackColor = false;
+            this.txtCargar.Click += new System.EventHandler(this.txtCargar_Click);
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.BackColor = System.Drawing.Color.LightGray;
+            this.tabPage4.Controls.Add(this.groupBox2);
+            this.tabPage4.Controls.Add(this.label12);
+            this.tabPage4.Controls.Add(this.numericDescu);
+            this.tabPage4.Controls.Add(this.textPrecio);
+            this.tabPage4.Controls.Add(this.textBox2);
+            this.tabPage4.Controls.Add(this.textNumfactura);
+            this.tabPage4.Controls.Add(this.label9);
+            this.tabPage4.Controls.Add(this.dgvFactura);
+            this.tabPage4.Controls.Add(this.btnFacturar);
+            this.tabPage4.Controls.Add(this.comboBox1);
+            this.tabPage4.Controls.Add(this.textreserF);
+            this.tabPage4.Controls.Add(this.label11);
+            this.tabPage4.Controls.Add(this.label14);
+            this.tabPage4.Controls.Add(this.label15);
+            this.tabPage4.Controls.Add(this.label16);
+            this.tabPage4.Location = new System.Drawing.Point(4, 28);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(850, 683);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Factura";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.checkSerusados);
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.textServUsados);
+            this.groupBox2.Location = new System.Drawing.Point(30, 557);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(783, 110);
+            this.groupBox2.TabIndex = 97;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Servicios adicionales";
+            // 
+            // checkSerusados
+            // 
+            this.checkSerusados.AutoSize = true;
+            this.checkSerusados.Location = new System.Drawing.Point(25, 29);
+            this.checkSerusados.Name = "checkSerusados";
+            this.checkSerusados.Size = new System.Drawing.Size(475, 23);
+            this.checkSerusados.TabIndex = 0;
+            this.checkSerusados.Text = "¿Uso algun servicio adicional? (se le añadira $1000.00 del monto original)";
+            this.checkSerusados.UseVisualStyleBackColor = true;
+            this.checkSerusados.CheckedChanged += new System.EventHandler(this.checkSerusados_CheckedChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(21, 69);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(111, 19);
+            this.label10.TabIndex = 12;
+            this.label10.Text = "Servicios usados:";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
+            // 
+            // textServUsados
+            // 
+            this.textServUsados.Location = new System.Drawing.Point(156, 66);
+            this.textServUsados.Name = "textServUsados";
+            this.textServUsados.Size = new System.Drawing.Size(611, 26);
+            this.textServUsados.TabIndex = 13;
+            this.textServUsados.TextChanged += new System.EventHandler(this.textServUsados_TextChanged);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(349, 468);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(49, 19);
+            this.label12.TabIndex = 96;
+            this.label12.Text = "Precio:";
+            // 
+            // numericDescu
+            // 
+            this.numericDescu.Location = new System.Drawing.Point(233, 465);
+            this.numericDescu.Name = "numericDescu";
+            this.numericDescu.Size = new System.Drawing.Size(62, 26);
+            this.numericDescu.TabIndex = 94;
+            // 
+            // textPrecio
+            // 
+            this.textPrecio.Enabled = false;
+            this.textPrecio.Location = new System.Drawing.Point(435, 465);
+            this.textPrecio.Name = "textPrecio";
+            this.textPrecio.Size = new System.Drawing.Size(148, 26);
+            this.textPrecio.TabIndex = 14;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Enabled = false;
+            this.textBox2.Location = new System.Drawing.Point(447, 80);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(50, 26);
+            this.textBox2.TabIndex = 14;
+            this.textBox2.Visible = false;
+            // 
+            // textNumfactura
+            // 
+            this.textNumfactura.Enabled = false;
+            this.textNumfactura.Location = new System.Drawing.Point(638, 516);
+            this.textNumfactura.Name = "textNumfactura";
+            this.textNumfactura.Size = new System.Drawing.Size(145, 26);
+            this.textNumfactura.TabIndex = 13;
+            this.textNumfactura.TextChanged += new System.EventHandler(this.textServUsados_TextChanged);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(71, 467);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(77, 19);
+            this.label9.TabIndex = 12;
+            this.label9.Text = "Descuento:";
+            this.label9.Click += new System.EventHandler(this.label10_Click);
+            // 
+            // dgvFactura
+            // 
+            this.dgvFactura.AllowUserToAddRows = false;
+            this.dgvFactura.AllowUserToDeleteRows = false;
+            this.dgvFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFactura.Location = new System.Drawing.Point(53, 132);
+            this.dgvFactura.Name = "dgvFactura";
+            this.dgvFactura.RowHeadersWidth = 51;
+            this.dgvFactura.RowTemplate.Height = 24;
+            this.dgvFactura.Size = new System.Drawing.Size(730, 309);
+            this.dgvFactura.TabIndex = 11;
+            this.dgvFactura.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFactura_CellClick);
+            // 
+            // btnFacturar
+            // 
+            this.btnFacturar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnFacturar.Location = new System.Drawing.Point(638, 461);
+            this.btnFacturar.Name = "btnFacturar";
+            this.btnFacturar.Size = new System.Drawing.Size(145, 45);
+            this.btnFacturar.TabIndex = 9;
+            this.btnFacturar.Text = "Facturar";
+            this.btnFacturar.UseVisualStyleBackColor = false;
+            this.btnFacturar.Click += new System.EventHandler(this.btnFacturar_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(174, 510);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 27);
+            this.comboBox1.TabIndex = 7;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // textreserF
+            // 
+            this.textreserF.Enabled = false;
+            this.textreserF.Location = new System.Drawing.Point(205, 79);
+            this.textreserF.Name = "textreserF";
+            this.textreserF.Size = new System.Drawing.Size(218, 26);
+            this.textreserF.TabIndex = 5;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(489, 519);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(127, 19);
+            this.label11.TabIndex = 3;
+            this.label11.Text = "Numero de factura:";
+            this.label11.Click += new System.EventHandler(this.label14_Click);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(48, 514);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(103, 19);
+            this.label14.TabIndex = 3;
+            this.label14.Text = "Modo de pago:";
+            this.label14.Click += new System.EventHandler(this.label14_Click);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(49, 82);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(148, 19);
+            this.label15.TabIndex = 1;
+            this.label15.Text = "Código de reservación:";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(78, 17);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(442, 38);
+            this.label16.TabIndex = 0;
+            this.label16.Text = "Coloque el código de reservación y pregunté al cliente los campos que \r\naparecen " +
+    "aquí abajo.\r\n";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.BackColor = System.Drawing.Color.LightGray;
+            this.tabPage2.Controls.Add(this.dgvCheckin);
+            this.tabPage2.Controls.Add(this.btnCheck);
+            this.tabPage2.Controls.Add(this.textIDcheckout);
+            this.tabPage2.Controls.Add(this.groupBox1);
+            this.tabPage2.Controls.Add(this.textReserOut);
+            this.tabPage2.Controls.Add(this.label8);
+            this.tabPage2.Controls.Add(this.label7);
+            this.tabPage2.Location = new System.Drawing.Point(4, 28);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(850, 683);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Check-Out";
+            // 
+            // dgvCheckin
+            // 
+            this.dgvCheckin.AllowUserToAddRows = false;
+            this.dgvCheckin.AllowUserToDeleteRows = false;
+            this.dgvCheckin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCheckin.Location = new System.Drawing.Point(36, 159);
+            this.dgvCheckin.Name = "dgvCheckin";
+            this.dgvCheckin.RowHeadersWidth = 51;
+            this.dgvCheckin.RowTemplate.Height = 24;
+            this.dgvCheckin.Size = new System.Drawing.Size(782, 432);
+            this.dgvCheckin.TabIndex = 11;
+            this.dgvCheckin.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCheckin_CellClick);
+            // 
+            // btnCheck
+            // 
+            this.btnCheck.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnCheck.Location = new System.Drawing.Point(575, 597);
+            this.btnCheck.Name = "btnCheck";
+            this.btnCheck.Size = new System.Drawing.Size(243, 71);
+            this.btnCheck.TabIndex = 9;
+            this.btnCheck.Text = "Check-out";
+            this.btnCheck.UseVisualStyleBackColor = false;
+            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
+            // 
+            // textIDcheckout
+            // 
+            this.textIDcheckout.Enabled = false;
+            this.textIDcheckout.Location = new System.Drawing.Point(431, 114);
+            this.textIDcheckout.Name = "textIDcheckout";
+            this.textIDcheckout.Size = new System.Drawing.Size(50, 26);
+            this.textIDcheckout.TabIndex = 5;
+            this.textIDcheckout.Visible = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dateTimeExt);
+            this.groupBox1.Controls.Add(this.checkBox1);
+            this.groupBox1.Location = new System.Drawing.Point(526, 17);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(292, 123);
+            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Extensión";
+            // 
+            // dateTimeExt
+            // 
+            this.dateTimeExt.Enabled = false;
+            this.dateTimeExt.Location = new System.Drawing.Point(25, 72);
+            this.dateTimeExt.Name = "dateTimeExt";
+            this.dateTimeExt.Size = new System.Drawing.Size(238, 26);
+            this.dateTimeExt.TabIndex = 1;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(25, 29);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(193, 23);
+            this.checkBox1.TabIndex = 0;
+            this.checkBox1.Text = "¿Desea extender sus visita?";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // textReserOut
+            // 
+            this.textReserOut.Enabled = false;
+            this.textReserOut.Location = new System.Drawing.Point(187, 114);
+            this.textReserOut.Name = "textReserOut";
+            this.textReserOut.Size = new System.Drawing.Size(218, 26);
+            this.textReserOut.TabIndex = 5;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(31, 117);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(148, 19);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Código de reservación:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(64, 17);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(442, 38);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Coloque el código de reservación y pregunté al cliente los campos que \r\naparecen " +
+    "aquí abajo.\r\n";
             // 
             // tabPage1
             // 
@@ -262,7 +587,7 @@ namespace Sistema.Vistas.Forms_hotel
             this.tabPage1.Location = new System.Drawing.Point(4, 28);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(850, 531);
+            this.tabPage1.Size = new System.Drawing.Size(850, 683);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Check-In";
             // 
@@ -298,6 +623,7 @@ namespace Sistema.Vistas.Forms_hotel
             this.si.TabStop = true;
             this.si.Text = "Si";
             this.si.UseVisualStyleBackColor = true;
+            this.si.CheckedChanged += new System.EventHandler(this.si_CheckedChanged);
             // 
             // dgvReser
             // 
@@ -308,7 +634,7 @@ namespace Sistema.Vistas.Forms_hotel
             this.dgvReser.Name = "dgvReser";
             this.dgvReser.RowHeadersWidth = 51;
             this.dgvReser.RowTemplate.Height = 24;
-            this.dgvReser.Size = new System.Drawing.Size(805, 306);
+            this.dgvReser.Size = new System.Drawing.Size(805, 458);
             this.dgvReser.TabIndex = 10;
             this.dgvReser.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReser_CellClick);
             // 
@@ -334,7 +660,7 @@ namespace Sistema.Vistas.Forms_hotel
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.button1.Location = new System.Drawing.Point(725, 476);
+            this.button1.Location = new System.Drawing.Point(725, 628);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(110, 49);
             this.button1.TabIndex = 2;
@@ -361,169 +687,16 @@ namespace Sistema.Vistas.Forms_hotel
             this.label5.Text = "Para hacer el Check-In, por favor introduzca el código de reservación que\r\nle pro" +
     "porcionará el cliente.";
             // 
-            // tabPage2
+            // tabControl1
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.LightGray;
-            this.tabPage2.Controls.Add(this.dgvCheckin);
-            this.tabPage2.Controls.Add(this.btnFacturar);
-            this.tabPage2.Controls.Add(this.groupBox1);
-            this.tabPage2.Controls.Add(this.comboBox1);
-            this.tabPage2.Controls.Add(this.textBox3);
-            this.tabPage2.Controls.Add(this.textReserOut);
-            this.tabPage2.Controls.Add(this.label11);
-            this.tabPage2.Controls.Add(this.label10);
-            this.tabPage2.Controls.Add(this.label8);
-            this.tabPage2.Controls.Add(this.label7);
-            this.tabPage2.Location = new System.Drawing.Point(4, 28);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(850, 531);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Check-Out";
-            // 
-            // dgvCheckin
-            // 
-            this.dgvCheckin.AllowUserToAddRows = false;
-            this.dgvCheckin.AllowUserToDeleteRows = false;
-            this.dgvCheckin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCheckin.Location = new System.Drawing.Point(53, 124);
-            this.dgvCheckin.Name = "dgvCheckin";
-            this.dgvCheckin.RowHeadersWidth = 51;
-            this.dgvCheckin.RowTemplate.Height = 24;
-            this.dgvCheckin.Size = new System.Drawing.Size(730, 154);
-            this.dgvCheckin.TabIndex = 11;
-            this.dgvCheckin.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCheckin_CellClick);
-            // 
-            // btnFacturar
-            // 
-            this.btnFacturar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnFacturar.Location = new System.Drawing.Point(488, 402);
-            this.btnFacturar.Name = "btnFacturar";
-            this.btnFacturar.Size = new System.Drawing.Size(243, 71);
-            this.btnFacturar.TabIndex = 9;
-            this.btnFacturar.Text = "Facturar";
-            this.btnFacturar.UseVisualStyleBackColor = false;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.btnExtender);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.dateTimeExt);
-            this.groupBox1.Controls.Add(this.checkBox1);
-            this.groupBox1.Location = new System.Drawing.Point(53, 300);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(292, 197);
-            this.groupBox1.TabIndex = 8;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Extensión";
-            // 
-            // btnExtender
-            // 
-            this.btnExtender.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnExtender.Enabled = false;
-            this.btnExtender.Location = new System.Drawing.Point(25, 155);
-            this.btnExtender.Name = "btnExtender";
-            this.btnExtender.Size = new System.Drawing.Size(238, 36);
-            this.btnExtender.TabIndex = 4;
-            this.btnExtender.Text = "Extender";
-            this.btnExtender.UseVisualStyleBackColor = false;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Enabled = false;
-            this.textBox4.Location = new System.Drawing.Point(127, 119);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(136, 26);
-            this.textBox4.TabIndex = 3;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(25, 122);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(77, 19);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "Habitación:";
-            // 
-            // dateTimeExt
-            // 
-            this.dateTimeExt.Enabled = false;
-            this.dateTimeExt.Location = new System.Drawing.Point(25, 72);
-            this.dateTimeExt.Name = "dateTimeExt";
-            this.dateTimeExt.Size = new System.Drawing.Size(238, 26);
-            this.dateTimeExt.TabIndex = 1;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(25, 29);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(193, 23);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "¿Desea extender sus visita?";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(610, 329);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 27);
-            this.comboBox1.TabIndex = 7;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(623, 79);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(146, 26);
-            this.textBox3.TabIndex = 6;
-            // 
-            // textReserOut
-            // 
-            this.textReserOut.Enabled = false;
-            this.textReserOut.Location = new System.Drawing.Point(205, 79);
-            this.textReserOut.Name = "textReserOut";
-            this.textReserOut.Size = new System.Drawing.Size(218, 26);
-            this.textReserOut.TabIndex = 5;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(522, 83);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(77, 19);
-            this.label11.TabIndex = 4;
-            this.label11.Text = "Descuento:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(484, 333);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(103, 19);
-            this.label10.TabIndex = 3;
-            this.label10.Text = "Modo de pago:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(49, 82);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(148, 19);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "Código de reservación:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(78, 17);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(442, 38);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Coloque el código de reservación y pregunté al cliente los campos que \r\naparecen " +
-    "aquí abajo.\r\n";
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Location = new System.Drawing.Point(267, 294);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(858, 715);
+            this.tabControl1.TabIndex = 3;
             // 
             // OPER_principal
             // 
@@ -531,11 +704,12 @@ namespace Sistema.Vistas.Forms_hotel
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Gold;
-            this.ClientSize = new System.Drawing.Size(1145, 882);
+            this.ClientSize = new System.Drawing.Size(1145, 1021);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.txtCargar);
             this.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
@@ -551,18 +725,24 @@ namespace Sistema.Vistas.Forms_hotel
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.tabControl1.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericDescu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFactura)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCheckin)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.gbasistio.ResumeLayout(false);
             this.gbasistio.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCheckin)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -584,33 +764,47 @@ namespace Sistema.Vistas.Forms_hotel
         private System.Windows.Forms.Timer timerOP;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.ToolStripMenuItem cerrarSeciónToolStripMenuItem;
+        private System.Windows.Forms.Button txtCargar;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.DataGridView dgvFactura;
+        private System.Windows.Forms.Button btnFacturar;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox textreserF;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.DataGridView dgvCheckin;
+        private System.Windows.Forms.Button btnCheck;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DateTimePicker dateTimeExt;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TextBox textReserOut;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.GroupBox gbasistio;
+        private System.Windows.Forms.RadioButton no;
+        private System.Windows.Forms.RadioButton si;
+        private System.Windows.Forms.DataGridView dgvReser;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.TextBox textcheckin;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Button btnFacturar;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnExtender;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DateTimePicker dateTimeExt;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textReserOut;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TextBox textServUsados;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ToolStripMenuItem cerrarSeciónToolStripMenuItem;
-        private System.Windows.Forms.DataGridView dgvReser;
-        private System.Windows.Forms.GroupBox gbasistio;
-        private System.Windows.Forms.RadioButton no;
-        private System.Windows.Forms.RadioButton si;
-        private System.Windows.Forms.DataGridView dgvCheckin;
+        private System.Windows.Forms.TextBox textIDcheckout;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.NumericUpDown numericDescu;
+        private System.Windows.Forms.TextBox textNumfactura;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textPrecio;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.CheckBox checkSerusados;
     }
 }

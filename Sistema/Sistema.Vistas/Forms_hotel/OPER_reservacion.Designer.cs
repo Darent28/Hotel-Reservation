@@ -34,6 +34,7 @@ namespace Sistema.Vistas.Forms_hotel
             this.panel1 = new System.Windows.Forms.Panel();
             this.fecha = new System.Windows.Forms.Label();
             this.hora = new System.Windows.Forms.Label();
+            this.labelrfc = new System.Windows.Forms.Label();
             this.nombreAd = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,7 +46,6 @@ namespace Sistema.Vistas.Forms_hotel
             this.textCliente = new System.Windows.Forms.TextBox();
             this.dgvCliente = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.textCiudad = new System.Windows.Forms.TextBox();
             this.dgvCiudad = new System.Windows.Forms.DataGridView();
             this.label8 = new System.Windows.Forms.Label();
@@ -54,7 +54,6 @@ namespace Sistema.Vistas.Forms_hotel
             this.dtpInicio = new System.Windows.Forms.DateTimePicker();
             this.dtpFinal = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
-            this.textAnticipo = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.cbMpago = new System.Windows.Forms.ComboBox();
             this.btnReservar = new System.Windows.Forms.Button();
@@ -67,16 +66,16 @@ namespace Sistema.Vistas.Forms_hotel
             this.textClienteRFC = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.textIDCiudad = new System.Windows.Forms.TextBox();
-            this.labelrfc = new System.Windows.Forms.Label();
             this.numericCanHab = new System.Windows.Forms.NumericUpDown();
-            this.numericPrecio = new System.Windows.Forms.NumericUpDown();
+            this.textAnticipo = new System.Windows.Forms.NumericUpDown();
+            this.textPrecio = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCiudad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericCanHab)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericPrecio)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textAnticipo)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -116,6 +115,18 @@ namespace Sistema.Vistas.Forms_hotel
             this.hora.Size = new System.Drawing.Size(50, 19);
             this.hora.TabIndex = 20;
             this.hora.Text = "label5";
+            // 
+            // labelrfc
+            // 
+            this.labelrfc.AutoSize = true;
+            this.labelrfc.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelrfc.ForeColor = System.Drawing.Color.White;
+            this.labelrfc.Location = new System.Drawing.Point(854, 90);
+            this.labelrfc.Name = "labelrfc";
+            this.labelrfc.Size = new System.Drawing.Size(50, 19);
+            this.labelrfc.TabIndex = 19;
+            this.labelrfc.Text = "label4";
+            this.labelrfc.Visible = false;
             // 
             // nombreAd
             // 
@@ -223,15 +234,6 @@ namespace Sistema.Vistas.Forms_hotel
             this.label6.TabIndex = 5;
             this.label6.Text = "Ciudad:";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(327, 599);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(193, 19);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Precio de presonas por noche:";
-            // 
             // textCiudad
             // 
             this.textCiudad.Location = new System.Drawing.Point(397, 411);
@@ -256,7 +258,7 @@ namespace Sistema.Vistas.Forms_hotel
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(290, 651);
+            this.label8.Location = new System.Drawing.Point(290, 602);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(230, 19);
             this.label8.TabIndex = 10;
@@ -299,18 +301,11 @@ namespace Sistema.Vistas.Forms_hotel
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(458, 703);
+            this.label11.Location = new System.Drawing.Point(293, 652);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(62, 19);
             this.label11.TabIndex = 16;
             this.label11.Text = "Anticipo:";
-            // 
-            // textAnticipo
-            // 
-            this.textAnticipo.Location = new System.Drawing.Point(582, 700);
-            this.textAnticipo.Name = "textAnticipo";
-            this.textAnticipo.Size = new System.Drawing.Size(100, 26);
-            this.textAnticipo.TabIndex = 17;
             // 
             // label12
             // 
@@ -373,7 +368,7 @@ namespace Sistema.Vistas.Forms_hotel
             // textcodigo
             // 
             this.textcodigo.Enabled = false;
-            this.textcodigo.Location = new System.Drawing.Point(409, 748);
+            this.textcodigo.Location = new System.Drawing.Point(409, 699);
             this.textcodigo.Name = "textcodigo";
             this.textcodigo.Size = new System.Drawing.Size(273, 26);
             this.textcodigo.TabIndex = 92;
@@ -381,7 +376,7 @@ namespace Sistema.Vistas.Forms_hotel
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(333, 752);
+            this.label14.Location = new System.Drawing.Point(333, 703);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(56, 19);
             this.label14.TabIndex = 91;
@@ -423,37 +418,33 @@ namespace Sistema.Vistas.Forms_hotel
             this.textIDCiudad.TabIndex = 3;
             this.textIDCiudad.TextChanged += new System.EventHandler(this.textCliente_TextChanged);
             // 
-            // labelrfc
-            // 
-            this.labelrfc.AutoSize = true;
-            this.labelrfc.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelrfc.ForeColor = System.Drawing.Color.White;
-            this.labelrfc.Location = new System.Drawing.Point(854, 90);
-            this.labelrfc.Name = "labelrfc";
-            this.labelrfc.Size = new System.Drawing.Size(50, 19);
-            this.labelrfc.TabIndex = 19;
-            this.labelrfc.Text = "label4";
-            this.labelrfc.Visible = false;
-            // 
             // numericCanHab
             // 
-            this.numericCanHab.Location = new System.Drawing.Point(582, 649);
+            this.numericCanHab.Location = new System.Drawing.Point(582, 600);
             this.numericCanHab.Name = "numericCanHab";
             this.numericCanHab.Size = new System.Drawing.Size(100, 26);
             this.numericCanHab.TabIndex = 93;
             // 
-            // numericPrecio
+            // textAnticipo
             // 
-            this.numericPrecio.DecimalPlaces = 2;
-            this.numericPrecio.Location = new System.Drawing.Point(582, 596);
-            this.numericPrecio.Maximum = new decimal(new int[] {
+            this.textAnticipo.DecimalPlaces = 2;
+            this.textAnticipo.Location = new System.Drawing.Point(417, 648);
+            this.textAnticipo.Maximum = new decimal(new int[] {
             9999,
             0,
             0,
             0});
-            this.numericPrecio.Name = "numericPrecio";
-            this.numericPrecio.Size = new System.Drawing.Size(100, 26);
-            this.numericPrecio.TabIndex = 94;
+            this.textAnticipo.Name = "textAnticipo";
+            this.textAnticipo.Size = new System.Drawing.Size(100, 26);
+            this.textAnticipo.TabIndex = 95;
+            // 
+            // textPrecio
+            // 
+            this.textPrecio.Enabled = false;
+            this.textPrecio.Location = new System.Drawing.Point(582, 648);
+            this.textPrecio.Name = "textPrecio";
+            this.textPrecio.Size = new System.Drawing.Size(100, 26);
+            this.textPrecio.TabIndex = 96;
             // 
             // OPER_reservacion
             // 
@@ -462,7 +453,8 @@ namespace Sistema.Vistas.Forms_hotel
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Gold;
             this.ClientSize = new System.Drawing.Size(1117, 911);
-            this.Controls.Add(this.numericPrecio);
+            this.Controls.Add(this.textPrecio);
+            this.Controls.Add(this.textAnticipo);
             this.Controls.Add(this.numericCanHab);
             this.Controls.Add(this.textcodigo);
             this.Controls.Add(this.label14);
@@ -472,7 +464,6 @@ namespace Sistema.Vistas.Forms_hotel
             this.Controls.Add(this.btnReservar);
             this.Controls.Add(this.cbMpago);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.textAnticipo);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.dtpFinal);
             this.Controls.Add(this.dtpInicio);
@@ -481,7 +472,6 @@ namespace Sistema.Vistas.Forms_hotel
             this.Controls.Add(this.label8);
             this.Controls.Add(this.dgvCiudad);
             this.Controls.Add(this.textCiudad);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.dgvCliente);
             this.Controls.Add(this.textIDCiudad);
@@ -507,7 +497,7 @@ namespace Sistema.Vistas.Forms_hotel
             ((System.ComponentModel.ISupportInitialize)(this.dgvCiudad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericCanHab)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericPrecio)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textAnticipo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -529,7 +519,6 @@ namespace Sistema.Vistas.Forms_hotel
         private System.Windows.Forms.TextBox textCliente;
         private System.Windows.Forms.DataGridView dgvCliente;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textCiudad;
         private System.Windows.Forms.DataGridView dgvCiudad;
         private System.Windows.Forms.Label label8;
@@ -538,7 +527,6 @@ namespace Sistema.Vistas.Forms_hotel
         private System.Windows.Forms.DateTimePicker dtpInicio;
         private System.Windows.Forms.DateTimePicker dtpFinal;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textAnticipo;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox cbMpago;
         private System.Windows.Forms.Button btnReservar;
@@ -553,6 +541,7 @@ namespace Sistema.Vistas.Forms_hotel
         private System.Windows.Forms.TextBox textIDCiudad;
         private System.Windows.Forms.Label labelrfc;
         private System.Windows.Forms.NumericUpDown numericCanHab;
-        private System.Windows.Forms.NumericUpDown numericPrecio;
+        private System.Windows.Forms.NumericUpDown textAnticipo;
+        private System.Windows.Forms.TextBox textPrecio;
     }
 }

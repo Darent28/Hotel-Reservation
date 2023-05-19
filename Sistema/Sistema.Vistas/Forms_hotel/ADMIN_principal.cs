@@ -50,7 +50,7 @@ namespace Sistema.Vistas.Forms_hotel
 
         private void reportesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ADMIN_reportes paginaReportes = new ADMIN_reportes();
+            ADMIN_reportes paginaReportes = new ADMIN_reportes(rfc, nombre);
             paginaReportes.Show();
         }
 

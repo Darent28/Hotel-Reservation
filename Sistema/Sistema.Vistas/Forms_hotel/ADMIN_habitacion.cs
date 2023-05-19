@@ -75,6 +75,7 @@ namespace Sistema.Vistas.Forms_hotel
                 else
                 {
                     MessageBox.Show("Favor de llenar el apartado vistas.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
 
                 string respuesta = N_Habitacion.sp_Habitacion(double.Parse(numCamas), tipoCamas, double.Parse(precioNoche), double.Parse(numPersonas), nivelHabitacion,
@@ -171,6 +172,7 @@ namespace Sistema.Vistas.Forms_hotel
             else
             {
                 MessageBox.Show("Favor de llenar el apartado vistas.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
             if (numCamas.CompareTo("") == 0 || tipoCamas.CompareTo("") == 0 || precioNoche.CompareTo("") == 0

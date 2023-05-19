@@ -46,11 +46,10 @@ namespace Sistema.Vistas.Forms_hotel
             cbMpago.Items.Add("Transferencia");
 
             labelrfc.Text = rfc;
-
+            nombreAd.Text = nombre;
 
             numericCanHab.ResetText();
-            numericPrecio.ResetText();
-            textAnticipo.Clear();
+            textAnticipo.ResetText();
 
             SetDoubleBuffered(dgvCiudad);
 
@@ -125,6 +124,7 @@ namespace Sistema.Vistas.Forms_hotel
             else
             {
                 textIDCiudad.Text = dgvCiudad.CurrentRow.Cells[0].Value.ToString();
+                textPrecio.Text = dgvCiudad.CurrentRow.Cells[6].Value.ToString();
 
             }
         }
@@ -135,25 +135,39 @@ namespace Sistema.Vistas.Forms_hotel
             string RFC = textClienteRFC.Text;
             string IDCiudad = textIDCiudad.Text;
             string canhab = numericCanHab.Text;
-            string canper = numericPrecio.Text;
             string finicio = dtpInicio.Text;
             string ffinal = dtpFinal.Text;
             string freg = dtpRegistro.Text;
             string anticipo = textAnticipo.Text;
             string metodopago = cbMpago.Text;
             string esadmin = labelrfc.Text;
+            string precio = textPrecio.Text;
 
+            string[] totalremove = new string[] { "$" };
+            foreach (var c in totalremove)
+            {
+                precio = precio.Replace(c, string.Empty);
+            }
 
-            if (codigo.CompareTo("") == 0 || RFC.CompareTo("") == 0 || IDCiudad.CompareTo("") == 0 || canhab.CompareTo("") == 0 ||
-                canper.CompareTo("") == 0 || anticipo.CompareTo("") == 0)
+            float finalprecio = float.Parse(precio);
+            float finalanticipo = float.Parse(anticipo);
+
+            if (codigo.CompareTo("") == 0 || RFC.CompareTo("") == 0 || IDCiudad.CompareTo("") == 0 || canhab.CompareTo("") == 0 
+                || anticipo.CompareTo("") == 0 || precio.CompareTo("") == 0)
             {
                 MessageBox.Show("Favor de llenar todos los campos.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
 
-                string respuesta = N_Reservacion.sp_Reservacion(codigo, freg, finicio, ffinal, double.Parse(canper),
-                                                       float.Parse(anticipo), metodopago, esadmin,
+                if(finalanticipo >= finalprecio)
+                {
+                    MessageBox.Show("Anticipo no puede ser mayor que el precio.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                string respuesta = N_Reservacion.sp_Reservacion(codigo, freg, finicio, ffinal, double.Parse(canhab),
+                                                       finalanticipo, metodopago, esadmin,
                                                        RFC, int.Parse(IDCiudad), "I");
 
                 if (respuesta.Equals("OK"))
