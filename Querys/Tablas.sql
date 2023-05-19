@@ -80,7 +80,7 @@ create table Habitacion(
 	regAdim varchar(13),
 	foreign key (regAdim) REFERENCES Usuario(RFC)
 );
- 
+
 ALTER TABLE Habitacion
 DROP COLUMN precio; 
 drop table Habitacion;
@@ -109,6 +109,7 @@ create table Reservacion(
 	canPers numeric(1,0) not null,
 	anticipo float not null,
 	mPago varchar(255) not null,
+	_status int Default 1,
 	regAdim varchar(13) not null,
 	rfcCliente varchar(13) not null,
 	id_HH int not null,
@@ -118,45 +119,56 @@ create table Reservacion(
 
 ); 
 
-ALTER TABLE Reservacion
-DROP COLUMN habitacion; 
+ALTER TABLE Reservacion ADD _status int Default 0;
+ALTER TABLE Reservacion ALTER COLUMN _status int;
 
+select * from Reservacion
 drop table Reservacion;
 ------------------------------------------------------------------- Check in-------------------------------------------------------------------------------------------------
 
 create table Checkin(
 	id_checkin int primary key identity,
 	asistio int DEFAULT 0,
+	fCIN DATE DEFAULT GETDATE(),
 	codigo varchar(9),
 	foreign key (codigo) REFERENCES Reservacion(codigo)
 
 );
 
 drop table Checkin
+select * from Checkin
+delete from Checkin where id_checkin = 6
 
 ------------------------------------------------------------------- Check out-------------------------------------------------------------------------------------------------
 
 create table Checkout(
 	id_checkout int primary key identity,
 	extendio int DEFAULT 0,
+	fFinC DATE,
+	fCOUT DATE DEFAULT GETDATE(),
 	id_checkin int, 
 	foreign key (id_checkin) REFERENCES Checkin(id_checkin)
 );
 
+select * from Checkout
 drop table Checkout
+ALTER TABLE Checkout ADD fFinC DATE;
 ------------------------------------------------------------------- Factura-------------------------------------------------------------------------------------------------
 
 create table Factura(
 	numFactura numeric(5,0) primary key,
-	cod_reser varchar(9) not null,
 	servUsado varchar(255) not null, 
 	precio float not null,
 	descuento float not null,
 	montoTotal float not null,
+	servadd float not null,
+	cod_reser varchar(9) not null,
 	id_checkout int,
 	foreign key (cod_reser) REFERENCES Reservacion(codigo),
 	foreign key (id_checkout) REFERENCES Checkout(id_checkout)
 
 );
 
+select * from Factura;
 drop table Factura;
+ALTER TABLE Factura ADD servadd float not null;

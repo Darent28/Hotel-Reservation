@@ -123,7 +123,7 @@ go
 
 create proc sp_Get_Hotel
 as
-	select regAdim as 'Admin de Registro', id_hotel as ID, nombreH as 'Nombre del hotel', ubicacion as Ubicación,
+	select regAdim as 'Admin de Registro', id_hotel as ID, nombreH as 'Nombre del hotel', ubicacion as Ubicacion,
 	domicilioH as Domicilio, numPiso as 'Numero de piso', canHabitacion as 'Cantidad de habitación', fechaInicioOp as 'Inicio de operaciones', fechaReg as Registro  
 	from  Hotel;
 go
@@ -306,7 +306,7 @@ create proc sp_Reservacion
 @fReser						   DATE,
 @fInicio					   DATE,
 @fFin						   DATE,
-@canPers					   varchar(255),
+@canPers					  numeric(1,0),
 @anticipo					   float,
 @mPago						   varchar(255),
 @regAdim					   varchar(13),
@@ -344,6 +344,7 @@ go
 
 create proc sp_Get_Reservacion
 as
+	
 	select R.codigo as Codigo, concat(C.nombre, ' ', C.apellidoP, ' ', C.apellidoM) as 'Nombre del Cliente', C.correo as Correo, 
 	R.fInicio as 'Fecha de inicio', R.fFin as 'Fecha de Fin', R.canPers as 'Cantidad de personas', 
 	concat( '$',Format(R.anticipo, 'N2')) as 'Anticipo', R.mPago as 'Metodo de pago', H.tipoHab as 'Tipo de habitacion',
@@ -353,7 +354,8 @@ as
 	inner join Cliente C on R.rfcCliente = C.RFC
 	inner join HabitacionHotel H on R.id_HH = H.id_HH
 	inner join Hotel Hot on H.id_hotel = Hot.id_hotel
-	inner join Habitacion Hab on H.id_habitacion= Hab.id_habitacion;
+	inner join Habitacion Hab on H.id_habitacion= Hab.id_habitacion
+	WHERE _status = 1;
 go
 
 If OBJECT_ID ('sp_Get_ClienteR') is not null
@@ -397,6 +399,7 @@ go
 
 create proc sp_Checkin
 (
+@id_checkin					   int,
 @asistio					   int,
 @codigo						   varchar(9)
 )
@@ -418,7 +421,13 @@ create proc sp_Get_Checkin
 as
 Begin
 
-		select C.id_checkin, C.asistio, R.codigo, R.mPago, R.canPers, R.rfcCliente
+		select C.id_checkin as 'ID del Check in', 
+				CASE 
+				   When C.asistio = 0 Then 'No asistio' 
+			       When C.asistio = 1 Then 'Si asistio'
+				else 'No ha confirmado' END as Asistio, 
+			   R.codigo as 'Codigo Reservacion', R.mPago as 'Metodo de pago', R.canPers as 'Cantidad de personas',
+			   R.rfcCliente as 'RFC del cliente'
 			   from Checkin C inner join Reservacion R on C.codigo = R.codigo
 
 End;
@@ -430,14 +439,289 @@ go
 
 create proc sp_Checkout
 (
+@id_checkout				   int,
 @extendio					   int,
+@fFinC						   DATE = NULL,
 @id_checkin					   int
 )
 as
 Begin
 
-		insert into Checkout (extendio, id_checkin)
-				    VALUES (@extendio, @id_checkin)
+		insert into Checkout (extendio, id_checkin, fFinC)
+				    VALUES (@extendio, @id_checkin, @fFinC)
 
+End;
+go
+
+If OBJECT_ID ('sp_Get_Checkout') is not null
+	Drop procedure sp_Get_Checkout;
+go
+
+create proc sp_Get_Checkout
+
+as
+Begin
+
+		select  
+			CO.id_checkout as 'ID del Check out', 
+			CI.id_checkin as 'ID del Check in',
+				CASE 
+				   When CI.asistio = 0 Then 'No asistio' 
+			       When CI.asistio = 1 Then 'Si asistio'
+				else 'No ha confirmado' END as Asistio, 
+				CASE 
+				   When CO.extendio = 0 Then 'No Extendio' 
+			       When CO.extendio = 1 Then 'Si Extendio'
+				else 'No ha Decidido' END as 'Extendio el plazo de hospedaje', 
+			   R.codigo as 'Codigo Reservacion', R.mPago as 'Metodo de pago', R.canPers as 'Cantidad de personas',
+			   R.rfcCliente as 'RFC del cliente', Hab.preXpersXnoc as 'Precio de persona por noche', Hab.canXpersXhab as 'Cantidad de persona por habitacion'
+		from Checkout CO 
+		inner join Checkin CI on CO.id_checkout = CI.id_checkin
+		inner join Reservacion R on CI.codigo = R.codigo
+		inner join HabitacionHotel HH on R.id_HH = HH.id_HH
+		inner join Habitacion Hab on HH.id_habitacion = Hab.id_habitacion
+
+End;
+go
+
+------------------------------------------------------------------------------------- Factura ---------------------------------------------------------------------------------------------------------------
+
+If OBJECT_ID ('sp_Factura') is not null
+	Drop procedure sp_Factura;
+go
+
+create proc sp_Factura
+(
+@Op							   CHAR(1),
+@numFactura					   numeric(5,0),
+@servUsado					   varchar(255),
+@precio						   float,
+@descuento					   float,
+@montoTotal					   float,
+@servadd					   float,
+@cod_reser					   varchar(9),
+@id_checkout				   int
+)
+as
+Begin
+	IF @Op = 'I' --insert
+	Begin
+		insert into Factura (numFactura, servUsado, precio, descuento, montoTotal, servadd, cod_reser, id_checkout)
+				    VALUES (@numFactura, @servUsado, @precio, @descuento, @montoTotal, @servadd, @cod_reser, @id_checkout)
+	End
+
+	IF @Op = 'U' --update
+	Begin
+		Update Factura set servUsado = @servUsado, precio = @precio, descuento = @descuento,
+		                   montoTotal = @montoTotal, cod_reser = @cod_reser, id_checkout = @id_checkout
+		where numFactura = @numFactura	
+	End
+
+	IF @Op = 'D' --delete
+	Begin
+		delete from Factura  where numFactura = @numFactura		
+	End
+
+End;
+go
+
+------------------------------------------------------------------------------------ Triggers ---------------------------------------------------------------------------------------------------------------
+
+If OBJECT_ID ('tg_Checkin') is not null
+	Drop trigger tg_Checkin;
+go
+
+CREATE TRIGGER tg_Checkin
+ON Checkin 
+AFTER INSERT
+AS
+BEGIN
+	IF EXISTS (SELECT id_checkin, asistio, codigo FROM inserted WHERE asistio = 0)
+	BEGIN
+		UPDATE Reservacion SET _status = 0 WHERE codigo IN (SELECT codigo FROM inserted WHERE asistio = 0) 
+	END
+END
+
+
+If OBJECT_ID ('tg_Checkout') is not null
+	Drop trigger tg_Checkout;
+go
+
+CREATE TRIGGER tg_Checkout
+ON Checkout 
+AFTER INSERT
+AS
+BEGIN
+Declare @fFin DATE
+
+set @fFin = (select fFinC from inserted)
+
+	IF EXISTS (SELECT id_checkout, extendio, id_checkin FROM inserted WHERE extendio = 1)
+	BEGIN
+		UPDATE Reservacion SET fFin = @fFin WHERE codigo IN (SELECT R.codigo FROM inserted I 
+															   inner join Checkin CI on I.id_checkin = CI.id_checkin
+															   inner join Reservacion R on CI.codigo = R.codigo WHERE extendio = 1) 
+	END
+END
+
+------------------------------------------------------------------------------------- Reportes ---------------------------------------------------------------------------------------------------------------------------------------
+
+If OBJECT_ID ('sp_Get_Rhotel') is not null
+	Drop procedure sp_Get_Rhotel;
+go
+
+create proc sp_Get_Rhotel
+@pais		varchar(250),
+@ciudad		varchar(250),
+@hotel		varchar(250),
+@fecha		Date
+as
+Begin
+	SELECT DISTINCT
+		   Hot.domicilioH as Ciudad, Hot.ubicacion as Pais, Hot.nombreH as Hotel, Hot.fechaInicioOp as 'Fecha de inicio de operiacion',
+		   HH.tipoHab as 'Tipo de habitacion', Hot.canHabitacion as 'Cantidad de habitacion',
+		   COUNT(R.canPers) as 'Cantidad de personas hospedadas', (COUNT(R.canPers) * 100) / Hab.canXpersXhab as 'Porcentaje de ocupación'
+	FROM Reservacion R
+	inner join HabitacionHotel HH ON R.id_HH = HH.id_HH
+	inner join Hotel Hot ON HH.id_hotel = Hot.id_hotel
+	inner join Habitacion Hab ON HH.id_habitacion = Hab.id_habitacion
+	WHERE Hot.ubicacion like '%' + @pais + '%' and Hot.domicilioH like '%' + @ciudad + '%' and 
+		  Hot.nombreH like '%' + @hotel + '%' and YEAR(Hot.fechaInicioOp) = YEAR(@fecha) 
+	GROUP BY Hot.ubicacion, Hot.domicilioH, Hot.nombreH, Hot.fechaInicioOp, HH.tipoHab, Hot.canHabitacion, Hab.canXpersXhab
+	ORDER BY Hot.nombreH ASC; 
+End;
+go
+
+If OBJECT_ID ('sp_Get_Rhotelall') is not null
+	Drop procedure sp_Get_Rhotelall;
+go
+
+create proc sp_Get_Rhotelall
+@pais		varchar(250),
+@ciudad		varchar(250),
+@fecha		Date
+as
+Begin
+	SELECT DISTINCT
+		   Hot.domicilioH as Ciudad, Hot.ubicacion as Pais, Hot.nombreH as Hotel, Hot.fechaInicioOp as 'Fecha de inicio de operiacion',
+		   HH.tipoHab as 'Tipo de habitacion', Hot.canHabitacion as 'Cantidad de habitacion',
+		   COUNT(R.canPers) as 'Cantidad de personas hospedadas', (COUNT(R.canPers) * 100) / Hab.canXpersXhab as 'Porcentaje de ocupación'
+	FROM Reservacion R
+	inner join HabitacionHotel HH ON R.id_HH = HH.id_HH
+	inner join Hotel Hot ON HH.id_hotel = Hot.id_hotel
+	inner join Habitacion Hab ON HH.id_habitacion = Hab.id_habitacion
+	WHERE Hot.ubicacion like '%' + @pais + '%' and Hot.domicilioH like '%' + @ciudad + '%' and YEAR(Hot.fechaInicioOp) = YEAR(@fecha) 
+	GROUP BY Hot.ubicacion, Hot.domicilioH, Hot.nombreH, Hot.fechaInicioOp, HH.tipoHab, Hot.canHabitacion, Hab.canXpersXhab
+End;
+go
+
+
+If OBJECT_ID ('sp_Get_Rventas') is not null
+	Drop procedure sp_Get_Rventas;
+go
+
+create proc sp_Get_Rventas
+@pais		varchar(250),
+@ciudad		varchar(250),
+@hotel		varchar(250),
+@fecha		Date
+as
+Begin
+	SELECT Hot.domicilioH as Ciudad, Hot.ubicacion as Pais, Hot.nombreH as Hotel, concat( '$',Format(SUM(F.precio), 'N2')) as 'Ingresos por hospedaje',
+		   concat( '$',Format(SUM(F.servadd), 'N2'))  as 'Ingresos por servicios adicionales', concat( '$',Format(SUM(F.montoTotal), 'N2')) as 'Ingresos totales'
+	FROM Factura F
+	inner join Reservacion R ON F.cod_reser = R.codigo
+	inner join HabitacionHotel HH ON R.id_HH = HH.id_HH
+	inner join Hotel Hot ON HH.id_hotel = Hot.id_hotel
+	inner join Habitacion Hab ON HH.id_habitacion = Hab.id_habitacion
+	WHERE Hot.ubicacion like '%' + @pais + '%' and Hot.domicilioH like '%' + @ciudad + '%' and 
+		  Hot.nombreH like '%' + @hotel + '%' and YEAR(Hot.fechaInicioOp) = YEAR(@fecha)
+    GROUP BY Hot.domicilioH, Hot.ubicacion, Hot.nombreH;
+End;
+go
+
+If OBJECT_ID ('sp_Get_Rventasall') is not null
+	Drop procedure sp_Get_Rventasall;
+go
+
+create proc sp_Get_Rventasall
+@pais		varchar(250),
+@ciudad		varchar(250),
+@fecha		Date
+as
+Begin
+	SELECT Hot.domicilioH as Ciudad, Hot.ubicacion as Pais, Hot.nombreH as Hotel, concat( '$',Format(SUM(F.precio), 'N2')) as 'Ingresos por hospedaje',
+		   concat( '$',Format(SUM(F.servadd), 'N2'))  as 'Ingresos por servicios adicionales', concat( '$',Format(SUM(F.montoTotal), 'N2')) as 'Ingresos totales'
+	FROM Factura F
+	inner join Reservacion R ON F.cod_reser = R.codigo
+	inner join HabitacionHotel HH ON R.id_HH = HH.id_HH
+	inner join Hotel Hot ON HH.id_hotel = Hot.id_hotel
+	inner join Habitacion Hab ON HH.id_habitacion = Hab.id_habitacion
+	WHERE Hot.ubicacion like '%' + @pais + '%' and Hot.domicilioH like '%' + @ciudad + '%'
+	and YEAR(Hot.fechaInicioOp) = YEAR(@fecha)
+    GROUP BY Hot.domicilioH, Hot.ubicacion, Hot.nombreH;
+End;
+go
+
+If OBJECT_ID ('sp_Get_Rcliente') is not null
+	Drop procedure sp_Get_Rcliente;
+go
+
+create proc sp_Get_Rcliente
+@cliente	varchar(250),
+@fecha		Date
+as
+Begin
+	SELECT C.RFC as RFC, Concat(C.nombre, ' ', C.apellidoP, ' ', C.apellidoM) as 'Nombre del cliente',  Hot.domicilioH as Ciudad,  Hot.nombreH as Hotel,
+		   HH.tipoHab as 'Tipo de habitacion', Hab.id_habitacion as 'Nmero de habitación', R.canPers as 'Numero de personas hospedadas',
+		   R.codigo as 'Código de reservación', R.fReser as 'Fecha dereservación', CIN.fCIN as 'Fecha de Check in', COUT.fCOUT as 'Fecha de Check out',
+		   CASE
+		   WHEN R._status = 0 THEN 'No asistio'
+		   WHEN R._status = 1 THEN 'Si asistio' 
+		   ELSE 'No ha confirmado' 
+	END as 'Estatus de la reservación',  R.anticipo as Anticipo, concat( '$',Format(SUM(F.precio), 'N2')) as 'Ingresos por hospedaje',
+		   concat( '$',Format(SUM(F.servadd), 'N2'))  as 'Ingresos por servicios adicionales', concat( '$',Format(SUM(F.montoTotal), 'N2')) as 'Ingresos totales'
+	FROM Factura F
+	inner join Checkout COUT ON F.id_checkout = COUT.id_checkout
+	inner join Checkin CIN ON COUT.id_checkin = CIN.id_checkin
+	inner join Reservacion R ON F.cod_reser = R.codigo
+	inner join Cliente C ON R.rfcCliente = C.RFC
+	inner join HabitacionHotel HH ON R.id_HH = HH.id_HH
+	inner join Hotel Hot ON HH.id_hotel = Hot.id_hotel
+	inner join Habitacion Hab ON HH.id_habitacion = Hab.id_habitacion
+	WHERE C.RFC like '%' + @cliente + '%' and YEAR(Hot.fechaInicioOp) = YEAR(@fecha) AND MONTH(Hot.fechaInicioOp) = MONTH(@fecha)
+    GROUP BY  C.RFC, Concat(C.nombre, ' ', C.apellidoP, ' ', C.apellidoM), Hot.domicilioH, Hot.nombreH, HH.tipoHab, Hab.id_habitacion, R.canPers, R.codigo, R.fReser, CIN.fCIN, COUT.fCOUT, R._status, R.anticipo
+    ORDER BY R.fReser;
+End;
+go
+
+If OBJECT_ID ('sp_Get_Rclienteall') is not null
+	Drop procedure sp_Get_Rclienteall;
+go
+
+create proc sp_Get_Rclienteall
+@cliente	varchar(250)
+as
+Begin
+	SELECT C.RFC as RFC, Concat(C.nombre, ' ', C.apellidoP, ' ', C.apellidoM) as 'Nombre del cliente',  Hot.domicilioH as Ciudad,  Hot.nombreH as Hotel,
+		   HH.tipoHab as 'Tipo de habitacion', Hab.id_habitacion as 'Nmero de habitación', R.canPers as 'Numero de personas hospedadas',
+		   R.codigo as 'Código de reservación', R.fReser as 'Fecha dereservación', CIN.fCIN as 'Fecha de Check in', COUT.fCOUT as 'Fecha de Check out',
+		   CASE
+		   WHEN R._status = 0 THEN 'No asistio'
+		   WHEN R._status = 1 THEN 'Si asistio' 
+		   ELSE 'No ha confirmado' 
+	END as 'Estatus de la reservación',  R.anticipo as Anticipo, concat( '$',Format(SUM(F.precio), 'N2')) as 'Ingresos por hospedaje',
+		   concat( '$',Format(SUM(F.servadd), 'N2'))  as 'Ingresos por servicios adicionales', concat( '$',Format(SUM(F.montoTotal), 'N2')) as 'Ingresos totales'
+	FROM Factura F
+	inner join Checkout COUT ON F.id_checkout = COUT.id_checkout
+	inner join Checkin CIN ON COUT.id_checkin = CIN.id_checkin
+	inner join Reservacion R ON F.cod_reser = R.codigo
+	inner join Cliente C ON R.rfcCliente = C.RFC
+	inner join HabitacionHotel HH ON R.id_HH = HH.id_HH
+	inner join Hotel Hot ON HH.id_hotel = Hot.id_hotel
+	inner join Habitacion Hab ON HH.id_habitacion = Hab.id_habitacion
+	WHERE C.RFC like '%' + @cliente + '%'
+    GROUP BY  C.RFC, Concat(C.nombre, ' ', C.apellidoP, ' ', C.apellidoM), Hot.domicilioH, Hot.nombreH, HH.tipoHab, Hab.id_habitacion, R.canPers, R.codigo, R.fReser, CIN.fCIN, COUT.fCOUT, R._status, R.anticipo
+    ORDER BY R.fReser;
 End;
 go
