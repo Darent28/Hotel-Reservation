@@ -51,7 +51,7 @@ namespace Sistema.Vistas.Forms_hotel
                domicilio.CompareTo("") == 0 || correo.CompareTo("") == 0 || telefono.CompareTo("") == 0 || referencia.CompareTo("") == 0 ||
                fnacimiento.CompareTo("") == 0 || eCivil.CompareTo("") == 0 || fRegistro.CompareTo("") == 0)
             {
-                MessageBox.Show("Favor de llenar todos los campos.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Favor de llenar todos los campos.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -63,12 +63,12 @@ namespace Sistema.Vistas.Forms_hotel
 
                 if (respuesta.Equals("OK"))
                 {
-                    MessageBox.Show("Nuevo Cliente Agregado", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Nuevo cliente agregado", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     OPER_clientes_Load(sender, e);
                 }
                 else
                 {
-                    MessageBox.Show(respuesta, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(respuesta, "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     OPER_clientes_Load(sender, e);
                 }
 
@@ -177,7 +177,7 @@ namespace Sistema.Vistas.Forms_hotel
                domicilio.CompareTo("") == 0 || correo.CompareTo("") == 0 || telefono.CompareTo("") == 0 || referencia.CompareTo("") == 0 ||
                fnacimiento.CompareTo("") == 0 || eCivil.CompareTo("") == 0 || fRegistro.CompareTo("") == 0)
             {
-                MessageBox.Show("Favor de llenar todos los campos.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Favor de llenar todos los campos.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -188,12 +188,12 @@ namespace Sistema.Vistas.Forms_hotel
 
                 if (respuesta.Equals("OK"))
                 {
-                    MessageBox.Show("Cliente Editado", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Cliente editado", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     OPER_clientes_Load(sender, e);
                 }
                 else
                 {
-                    MessageBox.Show(respuesta, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(respuesta, "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     OPER_clientes_Load(sender, e);
                 }
 
@@ -219,7 +219,7 @@ namespace Sistema.Vistas.Forms_hotel
                domicilio.CompareTo("") == 0 || correo.CompareTo("") == 0 || telefono.CompareTo("") == 0 || referencia.CompareTo("") == 0 ||
                fnacimiento.CompareTo("") == 0 || eCivil.CompareTo("") == 0 || fRegistro.CompareTo("") == 0)
             {
-                MessageBox.Show("Favor de llenar todos los campos.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Favor de llenar todos los campos.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -230,16 +230,16 @@ namespace Sistema.Vistas.Forms_hotel
                 if (Opcion == DialogResult.OK)
                 {
                     string respuesta = N_Cliente.sp_Cliente(rfc, nombre, apellidop, apellidom, domicilio, correo,
-                                                       double.Parse(telefono), referencia, fnacimiento, eCivil, fRegistro, regAdim, "U");
+                                                       double.Parse(telefono), referencia, fnacimiento, eCivil, fRegistro, regAdim, "D");
 
                     if (respuesta.Equals("OK"))
                     {
-                        MessageBox.Show("Cliente Eliminado", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Cliente eliminado", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         OPER_clientes_Load(sender, e);
                     }
                     else
                     {
-                        MessageBox.Show(respuesta, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(respuesta, "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         OPER_clientes_Load(sender, e);
                     }
                 }

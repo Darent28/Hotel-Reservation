@@ -73,7 +73,7 @@ namespace Sistema.Vistas.Forms_hotel
         private void cerrarSecionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DialogResult Opcion;
-            Opcion = MessageBox.Show("Seguro que desea Cerrar Sesión", "Atencion", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            Opcion = MessageBox.Show("¿Seguro que desea Cerrar Sesión?", "Atención", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
             if (Opcion == DialogResult.OK)
             {

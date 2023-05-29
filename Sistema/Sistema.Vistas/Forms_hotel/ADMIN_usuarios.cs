@@ -100,7 +100,7 @@ namespace Sistema.Vistas.Forms_hotel
                 nomina.CompareTo("") == 0 || fnacimiento.CompareTo("") == 0 || domicilio.CompareTo("") == 0 || telefono.CompareTo("") == 0 || 
                 correo.CompareTo("") == 0 || contrasena.CompareTo("") == 0)
             {
-                MessageBox.Show("Favor de llenar todos los campos.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Favor de llenar todos los campos.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -114,7 +114,7 @@ namespace Sistema.Vistas.Forms_hotel
                 }
                 else
                 {
-                    MessageBox.Show("Seleccione un tipo de usuario.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Seleccione un tipo de usuario.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
                 string respuesta = N_Usuario.sp_Usuario(RFC, nombre, apellidoP, apellidoM, double.Parse(nomina),
@@ -123,12 +123,12 @@ namespace Sistema.Vistas.Forms_hotel
 
                 if (respuesta.Equals("OK"))
                 {
-                    MessageBox.Show("Nuevo Usuario Agregado", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Nuevo usuario agregado", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ADMIN_usuarios_Load(sender, e);
                 }
                 else
                 {
-                    MessageBox.Show(respuesta, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(respuesta, "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     ADMIN_usuarios_Load(sender, e);
                 }
 
@@ -175,7 +175,7 @@ namespace Sistema.Vistas.Forms_hotel
                 nomina.CompareTo("") == 0 || fnacimiento.CompareTo("") == 0 || domicilio.CompareTo("") == 0 || telefono.CompareTo("") == 0 ||
                 correo.CompareTo("") == 0 || contrasena.CompareTo("") == 0)
             {
-                MessageBox.Show("Favor de llenar todos los campos.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Favor de llenar todos los campos.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -189,7 +189,7 @@ namespace Sistema.Vistas.Forms_hotel
                 }
                 else
                 {
-                    MessageBox.Show("Seleccione un tipo de usuario.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Seleccione un tipo de usuario.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
                 string respuesta = N_Usuario.sp_Usuario(RFC, nombre, apellidoP, apellidoM, double.Parse(nomina),
@@ -198,12 +198,12 @@ namespace Sistema.Vistas.Forms_hotel
 
                 if (respuesta.Equals("OK"))
                 {
-                    MessageBox.Show("Usuario Acutualizado", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Usuario actualizado", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ADMIN_usuarios_Load(sender, e);
                 }
                 else
                 {
-                    MessageBox.Show(respuesta, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(respuesta, "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     ADMIN_usuarios_Load(sender, e);
                 }
             }
@@ -252,12 +252,12 @@ namespace Sistema.Vistas.Forms_hotel
                 nomina.CompareTo("") == 0 || fnacimiento.CompareTo("") == 0 || domicilio.CompareTo("") == 0 || telefono.CompareTo("") == 0 ||
                 correo.CompareTo("") == 0 || contrasena.CompareTo("") == 0)
             {
-                MessageBox.Show("Favor de llenar todos los campos.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Favor de llenar todos los campos.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
                 DialogResult Opcion;
-                Opcion = MessageBox.Show("Deseas eliminar al Usuario con el RFC: " + "[" + RFC.ToString() + "]" + "?", "Atencion", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                Opcion = MessageBox.Show("¿Deseas eliminar al usuario con el RFC: " + "[" + RFC.ToString() + "]" + "?", "Atención", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
                 if (Opcion == DialogResult.OK)
                 {
@@ -267,12 +267,12 @@ namespace Sistema.Vistas.Forms_hotel
 
                     if (respuesta.Equals("OK"))
                     {
-                        MessageBox.Show("Usuario Eliminado", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Usuario eliminado", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         ADMIN_usuarios_Load(sender, e);
                     }
                     else
                     {
-                        MessageBox.Show(respuesta, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(respuesta, "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         ADMIN_usuarios_Load(sender, e);
                     }
                 }

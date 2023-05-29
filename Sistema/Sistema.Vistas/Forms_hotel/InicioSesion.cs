@@ -47,7 +47,7 @@ namespace Sistema.Vistas.Forms_hotel
                 //who.registeredBy.Text = correo;
 
 
-                if (table.Rows.Count == 0)//usuario no existe
+                if (table.Rows.Count == 0 || table == null)//usuario no existe
                 {
                     MessageBox.Show("Usuario inexistente");
                 }
@@ -62,7 +62,7 @@ namespace Sistema.Vistas.Forms_hotel
                     {
                         if (tipoUsu == "1")
                         {
-                            MessageBox.Show("ingresardo seccion como Administrador");
+                            MessageBox.Show("Ingresando sección como: Administrador");
                             Forms_hotel.ADMIN_principal frm = new Forms_hotel.ADMIN_principal(RFC, NomCompleto);
                             frm.Show();
                             this.Hide();
@@ -70,7 +70,7 @@ namespace Sistema.Vistas.Forms_hotel
                         }
                         else if (tipoUsu == "0")
                         {
-                            MessageBox.Show("ingresardo seccion como Operador");
+                            MessageBox.Show("Ingresando sección como: Operador");
                             Forms_hotel.OPER_principal frm = new Forms_hotel.OPER_principal(RFC, NomCompleto);
                             frm.Show();
                             this.Hide();
@@ -80,7 +80,7 @@ namespace Sistema.Vistas.Forms_hotel
                     }
                     else
                     {
-                        MessageBox.Show("Contraseña incorrecta xd");
+                        MessageBox.Show("Contraseña incorrecta");
                     }
                 }
             }

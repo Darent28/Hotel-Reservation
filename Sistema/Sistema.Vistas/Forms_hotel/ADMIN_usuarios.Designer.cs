@@ -89,7 +89,7 @@ namespace Sistema.Vistas.Forms_hotel
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(-2, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1017, 121);
+            this.panel1.Size = new System.Drawing.Size(904, 105);
             this.panel1.TabIndex = 2;
             // 
             // fechas
@@ -97,9 +97,9 @@ namespace Sistema.Vistas.Forms_hotel
             this.fechas.AutoSize = true;
             this.fechas.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fechas.ForeColor = System.Drawing.Color.White;
-            this.fechas.Location = new System.Drawing.Point(532, 67);
+            this.fechas.Location = new System.Drawing.Point(473, 58);
             this.fechas.Name = "fechas";
-            this.fechas.Size = new System.Drawing.Size(50, 19);
+            this.fechas.Size = new System.Drawing.Size(59, 23);
             this.fechas.TabIndex = 9;
             this.fechas.Text = "label6";
             // 
@@ -108,9 +108,9 @@ namespace Sistema.Vistas.Forms_hotel
             this.horas.AutoSize = true;
             this.horas.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.horas.ForeColor = System.Drawing.Color.White;
-            this.horas.Location = new System.Drawing.Point(265, 67);
+            this.horas.Location = new System.Drawing.Point(236, 58);
             this.horas.Name = "horas";
-            this.horas.Size = new System.Drawing.Size(50, 19);
+            this.horas.Size = new System.Drawing.Size(59, 23);
             this.horas.TabIndex = 8;
             this.horas.Text = "label5";
             // 
@@ -119,9 +119,9 @@ namespace Sistema.Vistas.Forms_hotel
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(430, 21);
+            this.label4.Location = new System.Drawing.Point(382, 18);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 19);
+            this.label4.Size = new System.Drawing.Size(59, 23);
             this.label4.TabIndex = 7;
             this.label4.Text = "label4";
             // 
@@ -129,9 +129,9 @@ namespace Sistema.Vistas.Forms_hotel
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(459, 67);
+            this.label3.Location = new System.Drawing.Point(408, 58);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 19);
+            this.label3.Size = new System.Drawing.Size(50, 20);
             this.label3.TabIndex = 6;
             this.label3.Text = "Fecha:";
             // 
@@ -139,9 +139,9 @@ namespace Sistema.Vistas.Forms_hotel
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(208, 67);
+            this.label2.Location = new System.Drawing.Point(185, 58);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 19);
+            this.label2.Size = new System.Drawing.Size(45, 20);
             this.label2.TabIndex = 5;
             this.label2.Text = "Hora:";
             // 
@@ -149,18 +149,18 @@ namespace Sistema.Vistas.Forms_hotel
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(208, 21);
+            this.label1.Location = new System.Drawing.Point(185, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(173, 19);
+            this.label1.Size = new System.Drawing.Size(189, 20);
             this.label1.TabIndex = 4;
             this.label1.Text = "Nombre del administrador:\r\n";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(38, 30);
+            this.pictureBox1.Location = new System.Drawing.Point(34, 26);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(116, 58);
+            this.pictureBox1.Size = new System.Drawing.Size(103, 50);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -172,17 +172,17 @@ namespace Sistema.Vistas.Forms_hotel
             // 
             // textCorreo
             // 
-            this.textCorreo.Location = new System.Drawing.Point(432, 185);
+            this.textCorreo.Location = new System.Drawing.Point(384, 161);
             this.textCorreo.Name = "textCorreo";
-            this.textCorreo.Size = new System.Drawing.Size(157, 26);
+            this.textCorreo.Size = new System.Drawing.Size(140, 27);
             this.textCorreo.TabIndex = 80;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(270, 185);
+            this.label7.Location = new System.Drawing.Point(240, 161);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(124, 19);
+            this.label7.Size = new System.Drawing.Size(135, 20);
             this.label7.TabIndex = 79;
             this.label7.Text = "Correo electrónico:";
             // 
@@ -190,9 +190,9 @@ namespace Sistema.Vistas.Forms_hotel
             // 
             this.groupBox1.Controls.Add(this.radioOperario);
             this.groupBox1.Controls.Add(this.radioAdmin);
-            this.groupBox1.Location = new System.Drawing.Point(613, 277);
+            this.groupBox1.Location = new System.Drawing.Point(545, 241);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(311, 81);
+            this.groupBox1.Size = new System.Drawing.Size(276, 70);
             this.groupBox1.TabIndex = 78;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Puesto";
@@ -200,9 +200,9 @@ namespace Sistema.Vistas.Forms_hotel
             // radioOperario
             // 
             this.radioOperario.AutoSize = true;
-            this.radioOperario.Location = new System.Drawing.Point(174, 37);
+            this.radioOperario.Location = new System.Drawing.Point(155, 32);
             this.radioOperario.Name = "radioOperario";
-            this.radioOperario.Size = new System.Drawing.Size(81, 23);
+            this.radioOperario.Size = new System.Drawing.Size(89, 24);
             this.radioOperario.TabIndex = 1;
             this.radioOperario.Text = "Operario";
             this.radioOperario.UseVisualStyleBackColor = true;
@@ -211,9 +211,9 @@ namespace Sistema.Vistas.Forms_hotel
             // 
             this.radioAdmin.AutoSize = true;
             this.radioAdmin.Checked = true;
-            this.radioAdmin.Location = new System.Drawing.Point(17, 37);
+            this.radioAdmin.Location = new System.Drawing.Point(15, 32);
             this.radioAdmin.Name = "radioAdmin";
-            this.radioAdmin.Size = new System.Drawing.Size(114, 23);
+            this.radioAdmin.Size = new System.Drawing.Size(125, 24);
             this.radioAdmin.TabIndex = 0;
             this.radioAdmin.TabStop = true;
             this.radioAdmin.Text = "Administrador";
@@ -222,18 +222,18 @@ namespace Sistema.Vistas.Forms_hotel
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(279, 364);
+            this.label6.Location = new System.Drawing.Point(248, 317);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(117, 19);
+            this.label6.Size = new System.Drawing.Size(129, 20);
             this.label6.TabIndex = 76;
             this.label6.Text = "Apellido materno:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(355, 145);
+            this.label5.Location = new System.Drawing.Point(316, 126);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(36, 19);
+            this.label5.Size = new System.Drawing.Size(37, 20);
             this.label5.TabIndex = 73;
             this.label5.Text = "RFC:";
             // 
@@ -241,9 +241,9 @@ namespace Sistema.Vistas.Forms_hotel
             // 
             this.btnVerUsers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnVerUsers.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerUsers.Location = new System.Drawing.Point(780, 540);
+            this.btnVerUsers.Location = new System.Drawing.Point(693, 470);
             this.btnVerUsers.Name = "btnVerUsers";
-            this.btnVerUsers.Size = new System.Drawing.Size(128, 53);
+            this.btnVerUsers.Size = new System.Drawing.Size(114, 46);
             this.btnVerUsers.TabIndex = 72;
             this.btnVerUsers.Text = "Ver usuarios";
             this.btnVerUsers.UseVisualStyleBackColor = false;
@@ -253,9 +253,9 @@ namespace Sistema.Vistas.Forms_hotel
             // 
             this.btnElimUsers.BackColor = System.Drawing.Color.Red;
             this.btnElimUsers.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnElimUsers.Location = new System.Drawing.Point(780, 676);
+            this.btnElimUsers.Location = new System.Drawing.Point(693, 588);
             this.btnElimUsers.Name = "btnElimUsers";
-            this.btnElimUsers.Size = new System.Drawing.Size(128, 47);
+            this.btnElimUsers.Size = new System.Drawing.Size(114, 41);
             this.btnElimUsers.TabIndex = 71;
             this.btnElimUsers.Text = "Eliminar";
             this.btnElimUsers.UseVisualStyleBackColor = false;
@@ -265,9 +265,9 @@ namespace Sistema.Vistas.Forms_hotel
             // 
             this.btnEditarUsers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnEditarUsers.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarUsers.Location = new System.Drawing.Point(780, 609);
+            this.btnEditarUsers.Location = new System.Drawing.Point(693, 530);
             this.btnEditarUsers.Name = "btnEditarUsers";
-            this.btnEditarUsers.Size = new System.Drawing.Size(128, 50);
+            this.btnEditarUsers.Size = new System.Drawing.Size(114, 43);
             this.btnEditarUsers.TabIndex = 70;
             this.btnEditarUsers.Text = "Editar";
             this.btnEditarUsers.UseVisualStyleBackColor = false;
@@ -276,9 +276,9 @@ namespace Sistema.Vistas.Forms_hotel
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(51, 472);
+            this.label12.Location = new System.Drawing.Point(45, 410);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(502, 38);
+            this.label12.Size = new System.Drawing.Size(554, 40);
             this.label12.TabIndex = 69;
             this.label12.Text = "Presione el botón \"Ver usuarios\" para ver los usuarios registrados en el sistema." +
     "\r\nDe click sobre la celda y oprima el botón con la opción que desea realizar al " +
@@ -289,12 +289,12 @@ namespace Sistema.Vistas.Forms_hotel
             this.dataGridUsers.AllowUserToAddRows = false;
             this.dataGridUsers.AllowUserToDeleteRows = false;
             this.dataGridUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridUsers.Location = new System.Drawing.Point(55, 540);
+            this.dataGridUsers.Location = new System.Drawing.Point(49, 470);
             this.dataGridUsers.Name = "dataGridUsers";
             this.dataGridUsers.ReadOnly = true;
             this.dataGridUsers.RowHeadersWidth = 51;
             this.dataGridUsers.RowTemplate.Height = 24;
-            this.dataGridUsers.Size = new System.Drawing.Size(692, 183);
+            this.dataGridUsers.Size = new System.Drawing.Size(615, 159);
             this.dataGridUsers.TabIndex = 68;
             this.dataGridUsers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridUsers_CellClick);
             // 
@@ -302,9 +302,9 @@ namespace Sistema.Vistas.Forms_hotel
             // 
             this.btnRegistrarUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnRegistrarUser.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrarUser.Location = new System.Drawing.Point(665, 379);
+            this.btnRegistrarUser.Location = new System.Drawing.Point(591, 330);
             this.btnRegistrarUser.Name = "btnRegistrarUser";
-            this.btnRegistrarUser.Size = new System.Drawing.Size(243, 60);
+            this.btnRegistrarUser.Size = new System.Drawing.Size(216, 52);
             this.btnRegistrarUser.TabIndex = 67;
             this.btnRegistrarUser.Text = "Registrar";
             this.btnRegistrarUser.UseVisualStyleBackColor = false;
@@ -313,9 +313,9 @@ namespace Sistema.Vistas.Forms_hotel
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(55, 168);
+            this.pictureBox2.Location = new System.Drawing.Point(49, 146);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(170, 166);
+            this.pictureBox2.Size = new System.Drawing.Size(151, 144);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 66;
             this.pictureBox2.TabStop = false;
@@ -323,43 +323,43 @@ namespace Sistema.Vistas.Forms_hotel
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(316, 274);
+            this.label11.Location = new System.Drawing.Point(281, 238);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(76, 19);
+            this.label11.Size = new System.Drawing.Size(83, 20);
             this.label11.TabIndex = 65;
             this.label11.Text = "Nombre(s):";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(309, 224);
+            this.label10.Location = new System.Drawing.Point(275, 195);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(82, 19);
+            this.label10.Size = new System.Drawing.Size(86, 20);
             this.label10.TabIndex = 63;
             this.label10.Text = "Contraseña:";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(261, 409);
+            this.label9.Location = new System.Drawing.Point(232, 356);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(131, 19);
+            this.label9.Size = new System.Drawing.Size(141, 20);
             this.label9.TabIndex = 62;
             this.label9.Text = "Número de nómina:";
             // 
             // textApeP
             // 
-            this.textApeP.Location = new System.Drawing.Point(432, 319);
+            this.textApeP.Location = new System.Drawing.Point(384, 277);
             this.textApeP.Name = "textApeP";
-            this.textApeP.Size = new System.Drawing.Size(157, 26);
+            this.textApeP.Size = new System.Drawing.Size(140, 27);
             this.textApeP.TabIndex = 61;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(278, 319);
+            this.label8.Location = new System.Drawing.Point(247, 277);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(113, 19);
+            this.label8.Size = new System.Drawing.Size(125, 20);
             this.label8.TabIndex = 60;
             this.label8.Text = "Apellido paterno:";
             this.label8.Click += new System.EventHandler(this.label8_Click);
@@ -367,99 +367,99 @@ namespace Sistema.Vistas.Forms_hotel
             // textIRFC
             // 
             this.textIRFC.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textIRFC.Location = new System.Drawing.Point(432, 141);
+            this.textIRFC.Location = new System.Drawing.Point(384, 123);
             this.textIRFC.MaxLength = 13;
             this.textIRFC.Name = "textIRFC";
-            this.textIRFC.Size = new System.Drawing.Size(157, 26);
+            this.textIRFC.Size = new System.Drawing.Size(140, 27);
             this.textIRFC.TabIndex = 59;
             // 
             // textContra
             // 
-            this.textContra.Location = new System.Drawing.Point(432, 224);
+            this.textContra.Location = new System.Drawing.Point(384, 195);
             this.textContra.Name = "textContra";
-            this.textContra.Size = new System.Drawing.Size(157, 26);
+            this.textContra.Size = new System.Drawing.Size(140, 27);
             this.textContra.TabIndex = 81;
             this.textContra.UseSystemPasswordChar = true;
             // 
             // textNombres
             // 
-            this.textNombres.Location = new System.Drawing.Point(432, 271);
+            this.textNombres.Location = new System.Drawing.Point(384, 236);
             this.textNombres.Name = "textNombres";
-            this.textNombres.Size = new System.Drawing.Size(157, 26);
+            this.textNombres.Size = new System.Drawing.Size(140, 27);
             this.textNombres.TabIndex = 82;
             // 
             // textApeM
             // 
-            this.textApeM.Location = new System.Drawing.Point(432, 361);
+            this.textApeM.Location = new System.Drawing.Point(384, 314);
             this.textApeM.Name = "textApeM";
-            this.textApeM.Size = new System.Drawing.Size(157, 26);
+            this.textApeM.Size = new System.Drawing.Size(140, 27);
             this.textApeM.TabIndex = 83;
             // 
             // textNumNomina
             // 
-            this.textNumNomina.Location = new System.Drawing.Point(432, 409);
+            this.textNumNomina.Location = new System.Drawing.Point(384, 356);
             this.textNumNomina.MaxLength = 5;
             this.textNumNomina.Name = "textNumNomina";
-            this.textNumNomina.Size = new System.Drawing.Size(157, 26);
+            this.textNumNomina.Size = new System.Drawing.Size(140, 27);
             this.textNumNomina.TabIndex = 84;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(609, 144);
+            this.label13.Location = new System.Drawing.Point(541, 125);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(137, 19);
+            this.label13.Size = new System.Drawing.Size(149, 20);
             this.label13.TabIndex = 85;
             this.label13.Text = "Fecha de nacimiento:";
             // 
             // dateTimeFechaNaci
             // 
             this.dateTimeFechaNaci.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimeFechaNaci.Location = new System.Drawing.Point(787, 138);
+            this.dateTimeFechaNaci.Location = new System.Drawing.Point(700, 120);
             this.dateTimeFechaNaci.Name = "dateTimeFechaNaci";
-            this.dateTimeFechaNaci.Size = new System.Drawing.Size(137, 26);
+            this.dateTimeFechaNaci.Size = new System.Drawing.Size(122, 27);
             this.dateTimeFechaNaci.TabIndex = 86;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(609, 188);
+            this.label14.Location = new System.Drawing.Point(541, 163);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(68, 19);
+            this.label14.Size = new System.Drawing.Size(77, 20);
             this.label14.TabIndex = 87;
             this.label14.Text = "Domicilio:";
             // 
             // textDomicilio
             // 
-            this.textDomicilio.Location = new System.Drawing.Point(700, 185);
+            this.textDomicilio.Location = new System.Drawing.Point(622, 161);
             this.textDomicilio.Name = "textDomicilio";
-            this.textDomicilio.Size = new System.Drawing.Size(224, 26);
+            this.textDomicilio.Size = new System.Drawing.Size(200, 27);
             this.textDomicilio.TabIndex = 88;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(609, 231);
+            this.label15.Location = new System.Drawing.Point(541, 201);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(106, 19);
+            this.label15.Size = new System.Drawing.Size(118, 20);
             this.label15.TabIndex = 89;
             this.label15.Text = "Teléfono celular:";
             // 
             // textCelular
             // 
-            this.textCelular.Location = new System.Drawing.Point(748, 228);
+            this.textCelular.Location = new System.Drawing.Point(665, 198);
             this.textCelular.MaxLength = 10;
             this.textCelular.Name = "textCelular";
-            this.textCelular.Size = new System.Drawing.Size(176, 26);
+            this.textCelular.Size = new System.Drawing.Size(157, 27);
             this.textCelular.TabIndex = 90;
             // 
             // ADMIN_usuarios
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Gold;
-            this.ClientSize = new System.Drawing.Size(1010, 766);
+            this.ClientSize = new System.Drawing.Size(863, 666);
             this.Controls.Add(this.textCelular);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.textDomicilio);
@@ -489,9 +489,8 @@ namespace Sistema.Vistas.Forms_hotel
             this.Controls.Add(this.label8);
             this.Controls.Add(this.textIRFC);
             this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.Name = "ADMIN_usuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

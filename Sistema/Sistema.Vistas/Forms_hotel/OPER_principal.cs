@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Printing;
 
 namespace Sistema.Vistas.Forms_hotel
 {
@@ -130,7 +131,7 @@ namespace Sistema.Vistas.Forms_hotel
 
             if (checkin.CompareTo("") == 0)
             { 
-                MessageBox.Show("Favor de poner el codigo del checkin.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Favor de poner el codigo del checkin.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -145,7 +146,7 @@ namespace Sistema.Vistas.Forms_hotel
                 }
                 else
                 {
-                    MessageBox.Show("Favor de llenar el apartado Asistio.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Favor de llenar el apartado 'Asistio'", "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
@@ -154,12 +155,12 @@ namespace Sistema.Vistas.Forms_hotel
                 {
                     if (respuesta.Equals("OK"))
                     {
-                        MessageBox.Show("Reservacion Completada", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Reservación completada", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         OPER_principal_Load(sender, e);
                     }
                     else
                     {
-                        MessageBox.Show(respuesta, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(respuesta, "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         OPER_principal_Load(sender, e);
                     }
 
@@ -168,12 +169,12 @@ namespace Sistema.Vistas.Forms_hotel
                 {
                     if (respuesta.Equals("OK"))
                     {
-                        MessageBox.Show("Reservacion Reembolsada", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Reservación reembolsada", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         OPER_principal_Load(sender, e);
                     }
                     else
                     {
-                        MessageBox.Show(respuesta, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(respuesta, "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         OPER_principal_Load(sender, e);
                     }
                 }
@@ -224,7 +225,7 @@ namespace Sistema.Vistas.Forms_hotel
 
             if (checkin.CompareTo("") == 0)
             {
-                MessageBox.Show("Favor de poner el codigo del checkin.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Favor de poner el codigo del check-in.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -243,12 +244,12 @@ namespace Sistema.Vistas.Forms_hotel
 
                     if (respuesta.Equals("OK"))
                     {
-                        MessageBox.Show("Checkout Realizado", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Check-out realizado", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         OPER_principal_Load(sender, e);
                     }
                     else
                     {
-                        MessageBox.Show(respuesta, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(respuesta, "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         OPER_principal_Load(sender, e);
                     }
 
@@ -338,7 +339,7 @@ namespace Sistema.Vistas.Forms_hotel
             if (codigo.CompareTo("") == 0 || IDCheckout.CompareTo("") == 0 || descuento.CompareTo("") == 0 || mpago.CompareTo("") == 0
                 || susados.CompareTo("") == 0 || numfactura.CompareTo("") == 0)
             {
-                MessageBox.Show("Favor de llenar los datos.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Favor de llenar los datos.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -352,22 +353,93 @@ namespace Sistema.Vistas.Forms_hotel
                 float precioHab = float.Parse(preciotxt);
                 float descu = float.Parse(descuento);
                 float montototal = precioHab - (precioHab * (descu / 100));
+                float descTotal = precioHab * (descu / 100);
                 montototal += servadd;
+
+                float subTotalR = precioHab + servadd;
+
+                string v = Convert.ToString(subTotalR);
+                string subtotal = v;
+                string v1 = Convert.ToString(montototal);
+                string total = v1;
+                string v2 = Convert.ToString(descTotal);
+                string desc = v2;
 
                 string respuesta = N_Factura.sp_Factura(double.Parse(numfactura), susados, precioHab, float.Parse(descuento), montototal, servadd, codigo, int.Parse(IDCheckout), "I");
 
                 if (respuesta.Equals("OK"))
                 {
-                    MessageBox.Show("Factura Realizado", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    OPER_principal_Load(sender, e);
+                    button2.Enabled = true;
+                    textSubVenta.Text = subtotal;                    
+                    textTotalVenta.Text = total;
+                    textDescTotal.Text = desc;
+                    MessageBox.Show("Factura realizada", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show(respuesta, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(respuesta, "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     OPER_principal_Load(sender, e);
                 }
 
             }
+        }
+
+        private void Imprimir(object sender, PrintPageEventArgs e)
+        {
+            Font font = new Font("Courier", 14);
+            int ancho = 600;
+            int y = 20;
+            string numFactura = textNumfactura.Text;
+            string numReservacion = textreserF.Text;
+            string fecha = DateTime.Now.ToShortDateString();
+            string nombre = nombreAd.Text;
+            string precio = textPrecio.Text;
+            string desc = Convert.ToString(numericDescu.Value);
+            string descuento = desc;
+            string modoPago = Convert.ToString(comboBox1.SelectedItem);
+            string serviciosAd;
+            string precioAD;
+
+            if (checkSerusados.Checked)
+            {
+                serviciosAd = "";
+                precioAD = "1000.00";
+            }
+            else
+            {
+                serviciosAd = "(No)";
+                precioAD = "0.00";
+            }
+
+            string subtotal = textSubVenta.Text; 
+            string total = textTotalVenta.Text;
+            string descTotal = textDescTotal.Text;
+
+            e.Graphics.DrawString("--- FACTURA DE COMPRA ---", font, Brushes.Black, new RectangleF(0, y += 20, ancho, 20));
+            e.Graphics.DrawString("SHANGRI-LA HOTELS AND RESORTS", font, Brushes.Black, new RectangleF(0, y += 30, ancho, 20));
+            e.Graphics.DrawString("Operador: " + nombre, font, Brushes.Black, new RectangleF(0, y += 20, ancho, 20));
+            e.Graphics.DrawString("Código de reservación: " + numReservacion, font, Brushes.Black, new RectangleF(0, y += 20, ancho, 20));
+            e.Graphics.DrawString("Fecha: " + fecha, font, Brushes.Black, new RectangleF(0, y += 20, ancho, 20));
+            e.Graphics.DrawString("Numero de facturación: " + numFactura, font, Brushes.Black, new RectangleF(0, y += 20, ancho, 20));
+            e.Graphics.DrawString("------------------------", font, Brushes.Black, new RectangleF(0, y += 20, ancho, 20));
+
+            e.Graphics.DrawString("Descripción" + " -------------- | --  " +
+                    "Precio"
+                    , font, Brushes.Black, new RectangleF(0, y += 40, ancho, 20));
+
+            e.Graphics.DrawString("Hospedaje" + " --------------- | - " + precio, font, Brushes.Black, new RectangleF(0, y += 30, ancho, 20));
+            e.Graphics.DrawString("Servicio adicional " + serviciosAd + " ----- | ----- $" + precioAD, font, Brushes.Black, new RectangleF(0, y += 30, ancho, 20));
+
+            e.Graphics.DrawString("<<<< MODO DE PAGO >>>>", font, Brushes.Black, new RectangleF(0, y += 40, ancho, 20));
+            e.Graphics.DrawString(modoPago, font, Brushes.Black, new RectangleF(0, y += 30, ancho, 20));
+            e.Graphics.DrawString("------------------------", font, Brushes.Black, new RectangleF(0, y += 30, ancho, 20));
+
+            e.Graphics.DrawString("Subtotal: $" + subtotal +" MXN", font, Brushes.Black, new RectangleF(0, y += 40, ancho, 20));
+            e.Graphics.DrawString("Total: $" + total +" MXN", font, Brushes.Black, new RectangleF(0, y += 20, ancho, 20));
+            e.Graphics.DrawString("Descuento Total (%"+desc+"): $" + descTotal + " MXN", font, Brushes.Black, new RectangleF(0, y += 20, ancho, 20));            
+            e.Graphics.DrawString("--- GRACIAS POR ELEGIRNOS ---", font, Brushes.Black, new RectangleF(0, y += 40, ancho, 20));
+
+            
         }
 
         private void checkSerusados_CheckedChanged(object sender, EventArgs e)
@@ -385,6 +457,32 @@ namespace Sistema.Vistas.Forms_hotel
         private void si_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            printDocument1 = new PrintDocument();
+            PrinterSettings ps = new PrinterSettings();
+
+            printDocument1.PrinterSettings = ps;
+            printDocument1.PrintPage += Imprimir;
+            printDocument1.Print();
+            MessageBox.Show("PDF exitoso");
+            button2.Enabled = false;
+            textreserF.Text = "";
+            textBox2.Text = "";
+            numericDescu.Value = 0;
+            textServUsados.Text = "";
+            textNumfactura.Text = "";
+            textPrecio.Text = "";
+            textSubVenta.Text = "";
+            textTotalVenta.Text = "";
+            textDescTotal.Text = "";
         }
     }
 }

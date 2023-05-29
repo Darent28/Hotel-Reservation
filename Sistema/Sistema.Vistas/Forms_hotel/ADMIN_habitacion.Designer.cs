@@ -84,7 +84,7 @@ namespace Sistema.Vistas.Forms_hotel
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(-1, -3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(906, 121);
+            this.panel1.Size = new System.Drawing.Size(805, 105);
             this.panel1.TabIndex = 1;
             // 
             // fechas
@@ -92,9 +92,9 @@ namespace Sistema.Vistas.Forms_hotel
             this.fechas.AutoSize = true;
             this.fechas.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fechas.ForeColor = System.Drawing.Color.White;
-            this.fechas.Location = new System.Drawing.Point(532, 67);
+            this.fechas.Location = new System.Drawing.Point(473, 58);
             this.fechas.Name = "fechas";
-            this.fechas.Size = new System.Drawing.Size(50, 19);
+            this.fechas.Size = new System.Drawing.Size(59, 23);
             this.fechas.TabIndex = 9;
             this.fechas.Text = "label6";
             // 
@@ -103,9 +103,9 @@ namespace Sistema.Vistas.Forms_hotel
             this.horas.AutoSize = true;
             this.horas.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.horas.ForeColor = System.Drawing.Color.White;
-            this.horas.Location = new System.Drawing.Point(265, 67);
+            this.horas.Location = new System.Drawing.Point(236, 58);
             this.horas.Name = "horas";
-            this.horas.Size = new System.Drawing.Size(50, 19);
+            this.horas.Size = new System.Drawing.Size(59, 23);
             this.horas.TabIndex = 8;
             this.horas.Text = "label5";
             // 
@@ -114,9 +114,9 @@ namespace Sistema.Vistas.Forms_hotel
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(430, 21);
+            this.label4.Location = new System.Drawing.Point(382, 18);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 19);
+            this.label4.Size = new System.Drawing.Size(59, 23);
             this.label4.TabIndex = 7;
             this.label4.Text = "label4";
             // 
@@ -124,9 +124,9 @@ namespace Sistema.Vistas.Forms_hotel
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(459, 67);
+            this.label3.Location = new System.Drawing.Point(408, 58);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 19);
+            this.label3.Size = new System.Drawing.Size(50, 20);
             this.label3.TabIndex = 6;
             this.label3.Text = "Fecha:";
             // 
@@ -134,9 +134,9 @@ namespace Sistema.Vistas.Forms_hotel
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(208, 67);
+            this.label2.Location = new System.Drawing.Point(185, 58);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 19);
+            this.label2.Size = new System.Drawing.Size(45, 20);
             this.label2.TabIndex = 5;
             this.label2.Text = "Hora:";
             // 
@@ -144,18 +144,18 @@ namespace Sistema.Vistas.Forms_hotel
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(208, 21);
+            this.label1.Location = new System.Drawing.Point(185, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(173, 19);
+            this.label1.Size = new System.Drawing.Size(189, 20);
             this.label1.TabIndex = 4;
             this.label1.Text = "Nombre del administrador:\r\n";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(38, 30);
+            this.pictureBox1.Location = new System.Drawing.Point(34, 26);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(116, 58);
+            this.pictureBox1.Size = new System.Drawing.Size(103, 50);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -169,9 +169,9 @@ namespace Sistema.Vistas.Forms_hotel
             // 
             this.btnVerHabitaciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnVerHabitaciones.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerHabitaciones.Location = new System.Drawing.Point(730, 486);
+            this.btnVerHabitaciones.Location = new System.Drawing.Point(649, 423);
             this.btnVerHabitaciones.Name = "btnVerHabitaciones";
-            this.btnVerHabitaciones.Size = new System.Drawing.Size(128, 63);
+            this.btnVerHabitaciones.Size = new System.Drawing.Size(114, 55);
             this.btnVerHabitaciones.TabIndex = 50;
             this.btnVerHabitaciones.Text = "Ver habitaciones";
             this.btnVerHabitaciones.UseVisualStyleBackColor = false;
@@ -181,9 +181,9 @@ namespace Sistema.Vistas.Forms_hotel
             // 
             this.btnElimHB.BackColor = System.Drawing.Color.Red;
             this.btnElimHB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnElimHB.Location = new System.Drawing.Point(730, 622);
+            this.btnElimHB.Location = new System.Drawing.Point(649, 541);
             this.btnElimHB.Name = "btnElimHB";
-            this.btnElimHB.Size = new System.Drawing.Size(128, 47);
+            this.btnElimHB.Size = new System.Drawing.Size(114, 41);
             this.btnElimHB.TabIndex = 49;
             this.btnElimHB.Text = "Eliminar";
             this.btnElimHB.UseVisualStyleBackColor = false;
@@ -193,9 +193,9 @@ namespace Sistema.Vistas.Forms_hotel
             // 
             this.btnEditarHb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnEditarHb.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarHb.Location = new System.Drawing.Point(730, 555);
+            this.btnEditarHb.Location = new System.Drawing.Point(649, 483);
             this.btnEditarHb.Name = "btnEditarHb";
-            this.btnEditarHb.Size = new System.Drawing.Size(128, 61);
+            this.btnEditarHb.Size = new System.Drawing.Size(114, 53);
             this.btnEditarHb.TabIndex = 48;
             this.btnEditarHb.Text = "Editar";
             this.btnEditarHb.UseVisualStyleBackColor = false;
@@ -204,9 +204,9 @@ namespace Sistema.Vistas.Forms_hotel
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(57, 425);
+            this.label12.Location = new System.Drawing.Point(51, 370);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(541, 38);
+            this.label12.Size = new System.Drawing.Size(588, 40);
             this.label12.TabIndex = 47;
             this.label12.Text = "Presione el botón \"Ver habitaciones\" para ver las habitaciones registradas en el " +
     "sistema.\r\nDe click sobre la celda y oprima el botón con la opción que desea real" +
@@ -218,12 +218,12 @@ namespace Sistema.Vistas.Forms_hotel
             this.dataGridHabitaciones.AllowUserToAddRows = false;
             this.dataGridHabitaciones.AllowUserToDeleteRows = false;
             this.dataGridHabitaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridHabitaciones.Location = new System.Drawing.Point(56, 486);
+            this.dataGridHabitaciones.Location = new System.Drawing.Point(50, 423);
             this.dataGridHabitaciones.Name = "dataGridHabitaciones";
             this.dataGridHabitaciones.ReadOnly = true;
             this.dataGridHabitaciones.RowHeadersWidth = 51;
             this.dataGridHabitaciones.RowTemplate.Height = 24;
-            this.dataGridHabitaciones.Size = new System.Drawing.Size(645, 183);
+            this.dataGridHabitaciones.Size = new System.Drawing.Size(573, 159);
             this.dataGridHabitaciones.TabIndex = 46;
             this.dataGridHabitaciones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridHabitaciones_CellClick);
             // 
@@ -231,9 +231,9 @@ namespace Sistema.Vistas.Forms_hotel
             // 
             this.btnRegistrarH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnRegistrarH.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrarH.Location = new System.Drawing.Point(619, 361);
+            this.btnRegistrarH.Location = new System.Drawing.Point(550, 314);
             this.btnRegistrarH.Name = "btnRegistrarH";
-            this.btnRegistrarH.Size = new System.Drawing.Size(186, 60);
+            this.btnRegistrarH.Size = new System.Drawing.Size(165, 52);
             this.btnRegistrarH.TabIndex = 45;
             this.btnRegistrarH.Text = "Registrar";
             this.btnRegistrarH.UseVisualStyleBackColor = false;
@@ -242,9 +242,9 @@ namespace Sistema.Vistas.Forms_hotel
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(56, 186);
+            this.pictureBox2.Location = new System.Drawing.Point(50, 162);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(170, 166);
+            this.pictureBox2.Size = new System.Drawing.Size(151, 144);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 44;
             this.pictureBox2.TabStop = false;
@@ -252,43 +252,43 @@ namespace Sistema.Vistas.Forms_hotel
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(318, 226);
+            this.label11.Location = new System.Drawing.Point(283, 197);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(99, 19);
+            this.label11.Size = new System.Drawing.Size(109, 20);
             this.label11.TabIndex = 38;
             this.label11.Text = "Tipos de cama:";
             // 
             // numericPisos
             // 
-            this.numericPisos.Location = new System.Drawing.Point(452, 184);
+            this.numericPisos.Location = new System.Drawing.Point(402, 160);
             this.numericPisos.Name = "numericPisos";
-            this.numericPisos.Size = new System.Drawing.Size(100, 26);
+            this.numericPisos.Size = new System.Drawing.Size(89, 27);
             this.numericPisos.TabIndex = 37;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(288, 186);
+            this.label10.Location = new System.Drawing.Point(256, 162);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(123, 19);
+            this.label10.Size = new System.Drawing.Size(133, 20);
             this.label10.TabIndex = 36;
             this.label10.Text = "Número de camas:";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(281, 371);
+            this.label9.Location = new System.Drawing.Point(250, 323);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(128, 19);
+            this.label9.Size = new System.Drawing.Size(141, 20);
             this.label9.TabIndex = 34;
             this.label9.Text = "Nivel de habitación:";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(298, 274);
+            this.label8.Location = new System.Drawing.Point(265, 238);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(115, 19);
+            this.label8.Size = new System.Drawing.Size(124, 20);
             this.label8.TabIndex = 32;
             this.label8.Text = "Precio por noche:";
             // 
@@ -296,24 +296,24 @@ namespace Sistema.Vistas.Forms_hotel
             // 
             this.comboBoxTipos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxTipos.FormattingEnabled = true;
-            this.comboBoxTipos.Location = new System.Drawing.Point(452, 224);
+            this.comboBoxTipos.Location = new System.Drawing.Point(402, 195);
             this.comboBoxTipos.Name = "comboBoxTipos";
-            this.comboBoxTipos.Size = new System.Drawing.Size(146, 27);
+            this.comboBoxTipos.Size = new System.Drawing.Size(130, 28);
             this.comboBoxTipos.TabIndex = 52;
             // 
             // numericPersonas
             // 
-            this.numericPersonas.Location = new System.Drawing.Point(452, 318);
+            this.numericPersonas.Location = new System.Drawing.Point(402, 277);
             this.numericPersonas.Name = "numericPersonas";
-            this.numericPersonas.Size = new System.Drawing.Size(100, 26);
+            this.numericPersonas.Size = new System.Drawing.Size(89, 27);
             this.numericPersonas.TabIndex = 53;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(271, 325);
+            this.label6.Location = new System.Drawing.Point(241, 283);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(140, 19);
+            this.label6.Size = new System.Drawing.Size(150, 20);
             this.label6.TabIndex = 54;
             this.label6.Text = "Número de personas:";
             // 
@@ -321,9 +321,9 @@ namespace Sistema.Vistas.Forms_hotel
             // 
             this.comboBoxNivel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxNivel.FormattingEnabled = true;
-            this.comboBoxNivel.Location = new System.Drawing.Point(452, 366);
+            this.comboBoxNivel.Location = new System.Drawing.Point(402, 318);
             this.comboBoxNivel.Name = "comboBoxNivel";
-            this.comboBoxNivel.Size = new System.Drawing.Size(146, 27);
+            this.comboBoxNivel.Size = new System.Drawing.Size(130, 28);
             this.comboBoxNivel.TabIndex = 55;
             // 
             // groupBox1
@@ -331,9 +331,9 @@ namespace Sistema.Vistas.Forms_hotel
             this.groupBox1.Controls.Add(this.radioPiscina);
             this.groupBox1.Controls.Add(this.radioPlaya);
             this.groupBox1.Controls.Add(this.radioJardin);
-            this.groupBox1.Location = new System.Drawing.Point(619, 169);
+            this.groupBox1.Location = new System.Drawing.Point(550, 147);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(186, 159);
+            this.groupBox1.Size = new System.Drawing.Size(165, 138);
             this.groupBox1.TabIndex = 56;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Vista";
@@ -341,9 +341,9 @@ namespace Sistema.Vistas.Forms_hotel
             // radioPiscina
             // 
             this.radioPiscina.AutoSize = true;
-            this.radioPiscina.Location = new System.Drawing.Point(17, 103);
+            this.radioPiscina.Location = new System.Drawing.Point(15, 90);
             this.radioPiscina.Name = "radioPiscina";
-            this.radioPiscina.Size = new System.Drawing.Size(136, 23);
+            this.radioPiscina.Size = new System.Drawing.Size(149, 24);
             this.radioPiscina.TabIndex = 2;
             this.radioPiscina.Text = "Frente a la piscina";
             this.radioPiscina.UseVisualStyleBackColor = true;
@@ -351,9 +351,9 @@ namespace Sistema.Vistas.Forms_hotel
             // radioPlaya
             // 
             this.radioPlaya.AutoSize = true;
-            this.radioPlaya.Location = new System.Drawing.Point(17, 70);
+            this.radioPlaya.Location = new System.Drawing.Point(15, 61);
             this.radioPlaya.Name = "radioPlaya";
-            this.radioPlaya.Size = new System.Drawing.Size(127, 23);
+            this.radioPlaya.Size = new System.Drawing.Size(139, 24);
             this.radioPlaya.TabIndex = 1;
             this.radioPlaya.Text = "Frente a la playa";
             this.radioPlaya.UseVisualStyleBackColor = true;
@@ -362,9 +362,9 @@ namespace Sistema.Vistas.Forms_hotel
             // 
             this.radioJardin.AutoSize = true;
             this.radioJardin.Checked = true;
-            this.radioJardin.Location = new System.Drawing.Point(17, 37);
+            this.radioJardin.Location = new System.Drawing.Point(15, 32);
             this.radioJardin.Name = "radioJardin";
-            this.radioJardin.Size = new System.Drawing.Size(118, 23);
+            this.radioJardin.Size = new System.Drawing.Size(129, 24);
             this.radioJardin.TabIndex = 0;
             this.radioJardin.TabStop = true;
             this.radioJardin.Text = "Frente al jardín";
@@ -372,32 +372,32 @@ namespace Sistema.Vistas.Forms_hotel
             // 
             // textHabitacionID
             // 
-            this.textHabitacionID.Location = new System.Drawing.Point(452, 152);
+            this.textHabitacionID.Location = new System.Drawing.Point(402, 118);
             this.textHabitacionID.Name = "textHabitacionID";
-            this.textHabitacionID.Size = new System.Drawing.Size(45, 26);
+            this.textHabitacionID.Size = new System.Drawing.Size(40, 27);
             this.textHabitacionID.TabIndex = 90;
             this.textHabitacionID.Visible = false;
             // 
             // numericPrecio
             // 
             this.numericPrecio.DecimalPlaces = 2;
-            this.numericPrecio.Location = new System.Drawing.Point(452, 269);
+            this.numericPrecio.Location = new System.Drawing.Point(402, 234);
             this.numericPrecio.Maximum = new decimal(new int[] {
             9999,
             0,
             0,
             0});
             this.numericPrecio.Name = "numericPrecio";
-            this.numericPrecio.Size = new System.Drawing.Size(100, 26);
+            this.numericPrecio.Size = new System.Drawing.Size(89, 27);
             this.numericPrecio.TabIndex = 91;
             // 
             // ADMIN_habitacion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Gold;
-            this.ClientSize = new System.Drawing.Size(900, 710);
+            this.ClientSize = new System.Drawing.Size(800, 617);
             this.Controls.Add(this.numericPrecio);
             this.Controls.Add(this.textHabitacionID);
             this.Controls.Add(this.groupBox1);
@@ -418,9 +418,8 @@ namespace Sistema.Vistas.Forms_hotel
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.Name = "ADMIN_habitacion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
