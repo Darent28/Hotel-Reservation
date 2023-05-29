@@ -384,7 +384,7 @@ create proc sp_Get_CiudadR
 as
 	select 
     HH.id_HH as ID, H.ubicacion as Ubicación, H.domicilioH as Domicilio, Hab.nivelHab as 'Nivel de Habitacion', Hab.tipoCama as 'Tipo de cama',
-	Hab.numCamas as 'Numero de camas', concat( '$',Format(Hab.preXpersXnoc, 'N2')) as 'Precio de persona por noche', H.nombreH as 'Nombre del hotel', 
+	Hab.numCamas as 'Numero de camas', concat( '$',Format(Hab.preXpersXnoc, 'N2')) as 'Precio de persona por noche', canXpersXhab as 'Cantidad de personas por habitacion', H.nombreH as 'Nombre del hotel', 
 	H.numPiso as 'Numero de piso', H.canHabitacion as 'Cantidad de habitación', HH.caract as Caracteristicas, HH.amenidades as Amenidades
 	from HabitacionHotel HH 
 	inner join Hotel H on HH.id_hotel = H.id_hotel 
@@ -580,7 +580,7 @@ Begin
 	SELECT DISTINCT
 		   Hot.domicilioH as Ciudad, Hot.ubicacion as Pais, Hot.nombreH as Hotel, Hot.fechaInicioOp as 'Fecha de inicio de operiacion',
 		   HH.tipoHab as 'Tipo de habitacion', Hot.canHabitacion as 'Cantidad de habitacion',
-		   COUNT(R.canPers) as 'Cantidad de personas hospedadas', (COUNT(R.canPers) * 100) / Hab.canXpersXhab as 'Porcentaje de ocupación'
+		   SUM(R.canPers) as 'Cantidad de personas hospedadas', Concat('%',Cast((COUNT(R.canPers) * 100) / Hab.canXpersXhab as int)) as 'Porcentaje de ocupación'
 	FROM Reservacion R
 	inner join HabitacionHotel HH ON R.id_HH = HH.id_HH
 	inner join Hotel Hot ON HH.id_hotel = Hot.id_hotel
@@ -605,7 +605,7 @@ Begin
 	SELECT DISTINCT
 		   Hot.domicilioH as Ciudad, Hot.ubicacion as Pais, Hot.nombreH as Hotel, Hot.fechaInicioOp as 'Fecha de inicio de operiacion',
 		   HH.tipoHab as 'Tipo de habitacion', Hot.canHabitacion as 'Cantidad de habitacion',
-		   COUNT(R.canPers) as 'Cantidad de personas hospedadas', (COUNT(R.canPers) * 100) / Hab.canXpersXhab as 'Porcentaje de ocupación'
+		   SUM(R.canPers) as 'Cantidad de personas hospedadas', Concat('%',Cast((COUNT(R.canPers) * 100) / Hab.canXpersXhab as int)) as 'Porcentaje de ocupación'
 	FROM Reservacion R
 	inner join HabitacionHotel HH ON R.id_HH = HH.id_HH
 	inner join Hotel Hot ON HH.id_hotel = Hot.id_hotel

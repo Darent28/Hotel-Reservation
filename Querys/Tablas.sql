@@ -23,6 +23,8 @@ select * from Usuario;
 
 truncate table Usuario;
 
+insert into Usuario (	RFC, nombre, apellidop, apellidom, nomina, fnacimiento, domicilio, telefono, esadmin, correo, contrasena) 
+            values ('EIDR012906345', 'David', 'Elizondo', 'Ramos', 12345, '07/28/2001', 'mi casa', 8123826122, 1, 'david@mail.com', '123')
 update Usuario set correo = 'operador@mail.com', contrasena = 'aei', nombre = 'Operador', apellidop = 'Primer', apellidom = 'Prueba' where RFC = 'EIRD012807MDA';
 
 ------------------------------------------------------------------- Cliente-------------------------------------------------------------------------------------------------
@@ -84,6 +86,7 @@ create table Habitacion(
 ALTER TABLE Habitacion
 DROP COLUMN precio; 
 drop table Habitacion;
+select * from Habitacion
 
 ------------------------------------------------------------------- HabitacionHotel -------------------------------------------------------------------------------------------------
 
