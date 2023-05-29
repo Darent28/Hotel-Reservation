@@ -12,3 +12,17 @@ C:\Users\daren\source\repos\MAD\Sistema\Sistema.Entidad\obj\Debug\Sistema.Entida
 C:\Users\daren\source\repos\MAD\Sistema\Sistema.Entidad\obj\Debug\Sistema.Entidad.csproj.CoreCompileInputs.cache
 C:\Users\daren\source\repos\MAD\Sistema\Sistema.Entidad\obj\Debug\Sistema.Entidad.dll
 C:\Users\daren\source\repos\MAD\Sistema\Sistema.Entidad\obj\Debug\Sistema.Entidad.pdb
+C:\Users\olive\OneDrive\Documentos\MAD_PIA\Mad_proyecto-main\Sistema\Sistema.Entidad\bin\Debug\Sistema.Entidad.dll.config
+C:\Users\olive\OneDrive\Documentos\MAD_PIA\Mad_proyecto-main\Sistema\Sistema.Entidad\bin\Debug\Sistema.Entidad.dll
+C:\Users\olive\OneDrive\Documentos\MAD_PIA\Mad_proyecto-main\Sistema\Sistema.Entidad\bin\Debug\Sistema.Entidad.pdb
+C:\Users\olive\OneDrive\Documentos\MAD_PIA\Mad_proyecto-main\Sistema\Sistema.Entidad\obj\Debug\Sistema.Entidad.csproj.AssemblyReference.cache
+C:\Users\olive\OneDrive\Documentos\MAD_PIA\Mad_proyecto-main\Sistema\Sistema.Entidad\obj\Debug\Sistema.Entidad.csproj.CoreCompileInputs.cache
+C:\Users\olive\OneDrive\Documentos\MAD_PIA\Mad_proyecto-main\Sistema\Sistema.Entidad\obj\Debug\Sistema.Entidad.dll
+C:\Users\olive\OneDrive\Documentos\MAD_PIA\Mad_proyecto-main\Sistema\Sistema.Entidad\obj\Debug\Sistema.Entidad.pdb
+C:\Users\daren\source\repos\MAD_PIA\Mad_proyecto-main\Sistema\Sistema.Entidad\bin\Debug\Sistema.Entidad.dll.config
+C:\Users\daren\source\repos\MAD_PIA\Mad_proyecto-main\Sistema\Sistema.Entidad\bin\Debug\Sistema.Entidad.dll
+C:\Users\daren\source\repos\MAD_PIA\Mad_proyecto-main\Sistema\Sistema.Entidad\bin\Debug\Sistema.Entidad.pdb
+C:\Users\daren\source\repos\MAD_PIA\Mad_proyecto-main\Sistema\Sistema.Entidad\obj\Debug\Sistema.Entidad.csprojAssemblyReference.cache
+C:\Users\daren\source\repos\MAD_PIA\Mad_proyecto-main\Sistema\Sistema.Entidad\obj\Debug\Sistema.Entidad.csproj.CoreCompileInputs.cache
+C:\Users\daren\source\repos\MAD_PIA\Mad_proyecto-main\Sistema\Sistema.Entidad\obj\Debug\Sistema.Entidad.dll
+C:\Users\daren\source\repos\MAD_PIA\Mad_proyecto-main\Sistema\Sistema.Entidad\obj\Debug\Sistema.Entidad.pdb
